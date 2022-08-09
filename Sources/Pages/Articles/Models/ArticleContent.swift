@@ -7,21 +7,25 @@
 
 import Foundation
 
-struct ArticleContent {
-    enum ContentType {
+public struct ArticleContent {
+    public enum ContentType {
         case image(name: String, mode: ContentMode)
         case markdown(content: String)
         case source(content: String)
 
-        enum ContentMode {
+        public enum ContentMode {
             case maxWidth
             case width(percentage: Int)
         }
     }
     
     let types: [ContentType]
+    
+    public init(types: [ContentType]) {
+        self.types = types
+    }
 }
 
-extension ArticleContent {
+public extension ArticleContent {
     static let empty: Self = .init(types: [])
 }

@@ -17,6 +17,10 @@ struct NavView: HTMLBodyContentView {
                 .identifyBy(cssClass: .activeLink)
             Link(text: "About", url: "about.html")
                 .identifyBy(cssClass: .inactiveLink)
+            Divider()
+                .backgroundColor(.DarkNavBarDividerColor)
+                .size(height: .pixel(1))
+                .borderWidth(.pixel(0))
         }
         .identifyBy(cssClass: .indexNav)
     }

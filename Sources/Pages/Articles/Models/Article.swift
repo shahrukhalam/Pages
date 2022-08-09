@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct Article {
+public struct Article {
     let content: ArticleContent
+    
+    public init(content: ArticleContent) {
+        self.content = content
+    }
 }
 
-extension Article {
+public extension Article {
     static let empty: Self = .init(content: .empty)
 }

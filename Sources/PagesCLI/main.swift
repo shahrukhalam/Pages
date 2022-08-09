@@ -34,7 +34,8 @@ private func generateCSS() throws {
 
 private func generateHTML() throws {
     let indexHTMLPath = indexHTMLFolder + Path("index.html")
-    try indexHTMLPath.write(indexView.element)
+    let indexHTML = indexView(article: article).element
+    try indexHTMLPath.write(indexHTML)
 }
 
 private var docsFolder: Path { Path.current + "docs" }
@@ -47,3 +48,9 @@ private var navStyle: String { NavStyle().element }
 private var bodyStyle: String { DarkIndexBodyStyle().element }
 private var articleStyle: String { ArticleStyle().element }
 private var markdownStyle: String { MarkdownStyle().element }
+
+private var contentPath: Path { Path.current + "Sources/Pages/Articles/Contents" }
+private var markdownPath: Path { contentPath + "1/1.md" }
+private var markdown: String { try! markdownPath.read() }
+private var content: ArticleContent { .init(types: [.markdown(content: markdown)]) }
+private var article: Article { .init(content: content) }

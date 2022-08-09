@@ -20,6 +20,10 @@ public extension Color {
         return .rgba(red: 41, green: 151, blue: 255, alpha: 1.0)
     }
     
+    static var DarkNavBarDividerColor: Color {
+        return .rgba(red: 76, green: 76, blue: 76, alpha: 1.0)
+    }
+    
     static var DarkArticleBackground: Color {
         return .rgba(red: 20, green: 20, blue: 21, alpha: 1.0)
     }
