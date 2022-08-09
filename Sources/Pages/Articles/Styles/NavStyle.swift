@@ -1,0 +1,47 @@
+//
+//  NavStyle.swift
+//  
+//
+//  Created by Shahrukh Alam on 08/08/22.
+//
+
+import HTMLDSL
+
+struct NavStyle: CSSStyle {
+    let key: CustomStringConvertible = Tag.empty.description
+    let styles = [Style]()
+    
+    var element: String
+    
+    init() {
+        let navStyle = ClassStyle(forClass: .indexNav)
+            .position(.fixed)
+            .constraint(left: .pixel(0), top: .pixel(0), right: .pixel(0))
+            .backgroundColor(Color.DarkNavBarColor)
+            .align(.center)
+            .filter(saturationInPercentage: 180, blurInPixel: 20)
+            .zIndex(1)
+        
+        let linkStyle = ClassStyle(forClass: .indexNav, withTag: .enclosing(.link))
+            .padding(uniform: .pixel(16))
+            .display(.inlineBlock)
+            .textDecoration(.none)
+        
+        let activeLinkStyle = ClassStyle(forClass: .activeLink)
+            .foregroundColor(Color.DarkActiveNavBarItem)
+            .pointer(.none)
+        
+        let inactiveLinkStyle = ClassStyle(forClass: .inactiveLink)
+            .foregroundColor(.html(.White))
+        
+        let hoverLinkStyle = TagStyle(cssTag: .hoverLink)
+            .foregroundColor(Color.DarkHoverNavBarItem)
+        
+        let classStyles = [navStyle, linkStyle, activeLinkStyle, inactiveLinkStyle]
+            .map { $0.element }
+        let tagStyles = [hoverLinkStyle].map { $0.element }
+        let allStyles = classStyles + tagStyles
+        self.element = allStyles
+            .joined(separator: "\n")
+    }
+}

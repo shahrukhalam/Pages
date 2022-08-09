@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "htmldsl",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/shahrukhalam/HTMLDSL.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "0839bb0a26b106a5a8142e957543db0e0fbc95f1"
-      }
-    },
-    {
       "identity" : "splash",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JohnSundell/Splash",
