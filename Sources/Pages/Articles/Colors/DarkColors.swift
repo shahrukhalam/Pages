@@ -19,4 +19,8 @@ public extension Color {
     static var DarkHoverNavBarItem: Color {
         return .rgba(red: 41, green: 151, blue: 255, alpha: 1.0)
     }
+    
+    static var DarkArticleBackground: Color {
+        return .rgba(red: 20, green: 20, blue: 21, alpha: 1.0)
+    }
 }

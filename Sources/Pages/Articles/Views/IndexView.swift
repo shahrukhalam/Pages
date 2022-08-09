@@ -23,6 +23,7 @@ public let indexView = Document {
             CSSLink(path: "../CSS/kickoff.css")
             CSSLink(path: "../CSS/nav.css")
             CSSLink(path: "../CSS/body.css")
+            CSSLink(path: "../CSS/article.css")
             CSSLink(path: "../CSS/markdown.css")
         }
         

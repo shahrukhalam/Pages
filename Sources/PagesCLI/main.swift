@@ -25,20 +25,25 @@ private func generateCSS() throws {
     let bodyCSSPath = cssPath + Path("body.css")
     try bodyCSSPath.write(bodyStyle)
     
+    let articleCSSPath = cssPath + Path("article.css")
+    try articleCSSPath.write(articleStyle)
+    
     let markdownCSSPath = cssPath + Path("markdown.css")
     try markdownCSSPath.write(markdownStyle)
 }
 
 private func generateHTML() throws {
-    let indexHTMLPath = htmlPath + Path("index.html")
+    let indexHTMLPath = indexHTMLFolder + Path("index.html")
     try indexHTMLPath.write(indexView.element)
 }
 
-private var generatedFolder: Path { Path.current + "Generated" }
-private var cssPath: Path { generatedFolder + Path("CSS") }
-private var htmlPath: Path { generatedFolder + Path("HTML") }
+private var docsFolder: Path { Path.current + "docs" }
+private var cssPath: Path { docsFolder + Path("CSS") }
+private var indexHTMLFolder: Path { docsFolder }
+private var htmlPath: Path { docsFolder + Path("HTML") }
 
 private var kickOffStyle: String { KickOffStyle().element }
 private var navStyle: String { NavStyle().element }
 private var bodyStyle: String { DarkIndexBodyStyle().element }
+private var articleStyle: String { ArticleStyle().element }
 private var markdownStyle: String { MarkdownStyle().element }
