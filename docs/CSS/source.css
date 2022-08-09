@@ -1,0 +1,55 @@
+pre {
+    background-color: #1a1a1a;
+    border-radius: 16px;
+    border-color: rgba(76, 76, 76, 1);
+    border-width: 1px;
+    border-style: solid;
+    display: block;
+    white-space: pre-line;
+    padding: 20px;
+    margin: 10px 0px;
+}
+
+pre code {
+    font-family: monospace;
+    display: inline;
+    color: #a9bcbc;
+    line-height: 26px;
+    font-size: 17px;
+}
+
+pre code .hljs-keyword {
+    color: #e73289;
+}
+
+pre code .hljs-type {
+    color: #8281ca;
+}
+
+pre code .hljs-call {
+    color: #348fe5;
+}
+
+pre code .hljs-property {
+    color: #21ab9d;
+}
+
+pre code .hljs-number {
+    color: #db6f57;
+}
+
+pre code .hljs-string {
+    color: #fa641e;
+}
+
+pre code .hljs-comment {
+    color: #6b8a94;
+}
+
+pre code .hljs-dotAccess {
+    color: #92b300;
+}
+
+pre code .hljs-preprocessing {
+    color: #b68a00;
+}

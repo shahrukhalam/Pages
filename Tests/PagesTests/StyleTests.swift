@@ -103,4 +103,17 @@ class StyleTests: XCTestCase {
         
         XCTAssertEqual(markdownStyle.element, expectation)
     }
+    
+    func testScript() {
+        let script = Script(url: "https://www.google.com/some.js")
+        
+        let expectation =
+            """
+            <script src="https://www.google.com/some.js">  </script>
+        """
+        
+        XCTAssertEqual(script.element, expectation)
+    }
 }
+
+import HTMLDSL

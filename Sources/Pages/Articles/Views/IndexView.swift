@@ -13,20 +13,24 @@ public func indexView(article: Article) -> some View {
         HTML {
             Head {
                 Title("Server Side Swift Article Tutorial, max 50-60 character, go for long descriptive title")
-                Meta([.characterSet(.utf8),
-                      .name(.author, content: "Shahrukh Alam")])
+                Meta([.characterSet(.utf8), .name(.author, content: "Shahrukh Alam")])
                 CSSLink(path: "CSS/kickoff.css")
                 CSSLink(path: "CSS/nav.css")
                 CSSLink(path: "CSS/body.css")
                 CSSLink(path: "CSS/article.css")
                 CSSLink(path: "CSS/markdown.css")
+                CSSLink(path: "CSS/source.css")
             }
             
             Body {
                 NavView()
-                
                 ArticleView(article)
+                Script(url: highlightScriptURL)
+                Script(command: highlightScriptCommand)
             }
         }
     }
 }
+
+private let highlightScriptURL = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"
+private let highlightScriptCommand = "hljs.highlightAll();"
