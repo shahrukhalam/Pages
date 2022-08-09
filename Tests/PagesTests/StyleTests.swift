@@ -88,6 +88,7 @@ class StyleTests: XCTestCase {
         .markdown h1 {
         padding: 20px 0px 20px 0px;
         font-size: 48px;
+        text-align: center;
         }
         .markdown h2 {
         padding: 10px 0px 10px 0px;

@@ -15,8 +15,11 @@ let package = Package(
         .package(url: "https://github.com/kylef/PathKit.git", from: "1.0.1")
     ],
     targets: [
-        .executableTarget(name: "PagesCLI", dependencies: ["Pages", "PathKit"]),
-        .target(name: "Pages", dependencies: ["HTMLDSL", "Splash"]),
+        .executableTarget(name: "PagesCLI",
+                          dependencies: ["Pages"]),
+        .target(name: "Pages",
+                dependencies: ["HTMLDSL", "Splash", "PathKit"],
+                resources: [.process("Articles/Contents")]),
         .testTarget(name: "PagesTests", dependencies: ["Pages"]),
     ]
 )

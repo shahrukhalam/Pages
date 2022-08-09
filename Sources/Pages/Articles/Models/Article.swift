@@ -10,3 +10,7 @@ import Foundation
 struct Article {
     let content: ArticleContent
 }
+
+extension Article {
+    static let empty: Self = .init(content: .empty)
+}

@@ -7,13 +7,13 @@
 
 import HTMLDSL
 
-struct DarkIndexBodyStyle: CSSStyle {
-    let key: CustomStringConvertible = Tag.empty.description
-    let styles = [Style]()
+public struct DarkIndexBodyStyle: CSSStyle {
+    public let key: CustomStringConvertible = Tag.empty.description
+    public let styles = [Style]()
 
-    var element: String
+    public var element: String
 
-    init() {
+    public init() {
         let bodyStyle = TagStyle(for: .enclosing(.body))
             .padding(top: .pixel(51))
             .backgroundColor(.html(.Black))

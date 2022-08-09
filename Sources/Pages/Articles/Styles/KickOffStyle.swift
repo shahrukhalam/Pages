@@ -7,13 +7,13 @@
 
 import HTMLDSL
 
-struct KickOffStyle: CSSStyle {
-    let key: CustomStringConvertible = Tag.empty.description
-    let styles = [Style]()
+public struct KickOffStyle: CSSStyle {
+    public let key: CustomStringConvertible = Tag.empty.description
+    public let styles = [Style]()
 
-    var element: String
+    public var element: String
 
-    init() {
+    public init() {
         let pageStyle = PageStyle()
             .margin()
             .padding()

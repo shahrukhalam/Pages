@@ -7,13 +7,13 @@
 
 import HTMLDSL
 
-struct NavStyle: CSSStyle {
-    let key: CustomStringConvertible = Tag.empty.description
-    let styles = [Style]()
+public struct NavStyle: CSSStyle {
+    public let key: CustomStringConvertible = Tag.empty.description
+    public let styles = [Style]()
     
-    var element: String
+    public var element: String
     
-    init() {
+    public init() {
         let navStyle = ClassStyle(forClass: .indexNav)
             .position(.fixed)
             .constraint(left: .pixel(0), top: .pixel(0), right: .pixel(0))

@@ -20,13 +20,21 @@ struct ArticleView: HTMLBodyContentView {
     var body: some View {
         Div {
             Div {
-                Markdown(
-                """
-                # I am a Heading
-                """)
+                article.content.types.first!.body
             }
             .identifyBy(cssClass: .markdown)
         }
         .identifyBy(cssClass: .article)
+    }
+}
+
+extension ArticleContent.ContentType {
+    var body: some HTMLBodyContentView {
+        switch self {
+        case .markdown(let content):
+            return Markdown(content)
+        default:
+            fatalError("No setup yet")
+        }
     }
 }

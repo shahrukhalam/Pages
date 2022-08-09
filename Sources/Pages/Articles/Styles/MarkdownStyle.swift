@@ -7,19 +7,20 @@
 
 import HTMLDSL
 
-struct MarkdownStyle: CSSStyle {
-    let key: CustomStringConvertible = Tag.empty.description
-    let styles = [Style]()
+public struct MarkdownStyle: CSSStyle {
+    public let key: CustomStringConvertible = Tag.empty.description
+    public let styles = [Style]()
     
-    var element: String
+    public var element: String
     
-    init() {
+    public init() {
         let containerStyle = ClassStyle(forClass: .markdown)
             .size(width: .percentage(60))
             .margin(left: .auto, right: .auto)
         let h1Style = ClassStyle(forClass: .markdown, withTag: .enclosing(.headings(.h1)))
             .padding(top: .pixel(20), bottom: .pixel(20))
             .font(size: .pixel(48))
+            .align(.center)
         let h2Style = ClassStyle(forClass: .markdown, withTag: .enclosing(.headings(.h2)))
             .padding(top: .pixel(10), bottom: .pixel(10))
             .font(size: .pixel(40))
