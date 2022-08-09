@@ -14,9 +14,9 @@ struct KickOffStyle: CSSStyle {
     var element: String
 
     init() {
-        let bodyStyle = TagStyle(for: .all)
+        let pageStyle = PageStyle()
             .margin()
             .padding()
-        self.element = bodyStyle.element
+        self.element = pageStyle.element
     }
 }

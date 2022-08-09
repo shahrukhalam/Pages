@@ -18,4 +18,6 @@ struct ArticleContent {
             case width(percentage: Int)
         }
     }
+    
+    let types: [ContentType]
 }

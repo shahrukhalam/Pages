@@ -75,4 +75,31 @@ class StyleTests: XCTestCase {
         
         XCTAssertEqual(darkIndexBodyStyle.element, expectation)
     }
+    
+    func testMarkdownStyle() {
+        let markdownStyle = MarkdownStyle()
+        
+        let expectation =
+            """
+        .markdown {
+        width: 60%;
+        margin: 0px auto 0px auto;
+        }
+        .markdown h1 {
+        padding: 20px 0px 20px 0px;
+        font-size: 48px;
+        }
+        .markdown h2 {
+        padding: 10px 0px 10px 0px;
+        font-size: 40px;
+        }
+        .markdown p {
+        padding: 10px 0px 10px 0px;
+        font-size: 20px;
+        line-height: 28px;
+        }
+        """
+        
+        XCTAssertEqual(markdownStyle.element, expectation)
+    }
 }

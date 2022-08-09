@@ -8,5 +8,5 @@
 import Foundation
 
 struct Article {
-    let contents: [ArticleContent]
+    let content: ArticleContent
 }
