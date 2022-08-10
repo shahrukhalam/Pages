@@ -4,15 +4,15 @@ margin: 0px auto 0px auto;
 }
 .markdown h1 {
 padding: 20px 0px 20px 0px;
-font-size: 48px;
+font-size: 300%;
 text-align: center;
 }
 .markdown h2 {
 padding: 10px 0px 10px 0px;
-font-size: 40px;
+font-size: 250%;
 }
 .markdown p {
 padding: 10px 0px 10px 0px;
-font-size: 20px;
-line-height: 28px;
+font-size: 125%;
+line-height: 140%;
 }

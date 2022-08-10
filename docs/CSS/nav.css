@@ -14,6 +14,7 @@ z-index: 1;
 padding: 16px 16px 16px 16px;
 display: inline-block;
 text-decoration: none;
+font-size: 120%;
 }
 .activeLink {
 color: rgba(139, 139, 139, 1.0);
