@@ -1,14 +1,13 @@
 //
-//  IndexView.swift
+//  ArticlePage.swift
 //  
 //
 //  Created by Shahrukh Alam on 09/08/22.
 //
 
 import HTMLDSL
-import PathKit
 
-public func indexView(article: Article) -> some View {
+public func articlePage(article: Article) -> some View {
     Document {
         HTML {
             Head {
@@ -16,7 +15,7 @@ public func indexView(article: Article) -> some View {
                 Meta(.characterSet(.utf8))
                 Meta(.name(.author, content: "Shahrukh Alam"))
                 Meta(.viewport(width: .deviceWidth, scale: .full))
-                commonCSS
+                commonCSSLinks
             }
             
             Body {
@@ -27,18 +26,6 @@ public func indexView(article: Article) -> some View {
             }
         }
     }
-}
-
-private var commonCSS: some HTMLContentView {
-    AnyView([
-        CSSLink(path: "CSS/kickoff.css"),
-        CSSLink(path: "CSS/nav.css"),
-        CSSLink(path: "CSS/body.css"),
-        CSSLink(path: "CSS/article.css"),
-        CSSLink(path: "CSS/markdown.css", type: .wide),
-        CSSLink(path: "CSS/markdown-small.css", type: .small),
-        CSSLink(path: "CSS/source.css")
-    ])
 }
 
 private let highlightScriptURL = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"

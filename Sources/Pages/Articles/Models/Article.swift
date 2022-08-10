@@ -8,13 +8,9 @@
 import Foundation
 
 public struct Article {
-    let content: ArticleContent
+    let markdown: String
     
-    public init(content: ArticleContent) {
-        self.content = content
+    public init(markdown: String) {
+        self.markdown = markdown
     }
-}
-
-public extension Article {
-    static let empty: Self = .init(content: .empty)
 }

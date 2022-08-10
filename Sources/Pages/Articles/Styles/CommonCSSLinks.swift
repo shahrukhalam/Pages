@@ -1,0 +1,21 @@
+//
+//  CommonCSSLinks.swift
+//  
+//
+//  Created by Shahrukh Alam on 10/08/22.
+//
+
+import HTMLDSL
+
+var commonCSSLinks: some HTMLContentView {
+    AnyView([
+        CSSLink(path: "CSS/kickoff.css"),
+        CSSLink(path: "CSS/nav.css"),
+        CSSLink(path: "CSS/body.css"),
+        CSSLink(path: "CSS/common.css"),
+        CSSLink(path: "CSS/article.css"),
+        CSSLink(path: "CSS/markdown.css", type: .wide),
+        CSSLink(path: "CSS/markdown-small.css", type: .small),
+        CSSLink(path: "CSS/source.css")
+    ])
+}

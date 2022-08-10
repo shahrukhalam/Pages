@@ -1,0 +1,37 @@
+.primaryLargeTitle {
+padding: 20px 0px 20px 0px;
+font-size: 300%;
+}
+.secondaryLargeTitle {
+font-size: 250%;
+}
+.tertiaryLargeTitle {
+font-size: 200%;
+}
+.primaryTitle {
+padding: 10px 0px 10px 0px;
+font-size: 250%;
+font-weight: 600;
+}
+.secondaryTitle {
+font-size: 200%;
+font-weight: 600;
+}
+.primarySubTitle {
+padding: 5px 0px 5px 0px;
+font-size: 200%;
+font-weight: 400;
+}
+.secondarySubTitle {
+font-size: 150%;
+font-weight: 400;
+}
+.centerText {
+text-align: center;
+}
+.centerDivX {
+margin: 0px auto 0px auto;
+}
+.centerDivY {
+margin: auto 0px auto 0px;
+}

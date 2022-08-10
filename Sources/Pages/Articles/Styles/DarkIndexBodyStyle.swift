@@ -15,7 +15,7 @@ public struct DarkIndexBodyStyle: CSSStyle {
 
     public init() {
         let bodyStyle = TagStyle(for: .enclosing(.body))
-            .padding(top: .pixel(51))
+            .padding(top: .pixel(57))
             .backgroundColor(.html(.Black))
             .foregroundColor(.html(.White))
             .font(family: .sansSerif([.SFProDisplay,

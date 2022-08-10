@@ -17,27 +17,33 @@ private func kickStart() throws {
 
 private func generateCSS() throws {
     let kickoffCSSPath = cssPath + Path("kickoff.css")
-    try kickoffCSSPath.write(kickOffStyle)
+    try kickoffCSSPath.write(kickOffStyleElement)
     
     let navCSSPath = cssPath + Path("nav.css")
-    try navCSSPath.write(navStyle)
+    try navCSSPath.write(navStyleElement)
 
     let bodyCSSPath = cssPath + Path("body.css")
-    try bodyCSSPath.write(bodyStyle)
+    try bodyCSSPath.write(bodyStyleElement)
     
     let articleCSSPath = cssPath + Path("article.css")
-    try articleCSSPath.write(articleStyle)
+    try articleCSSPath.write(articleStyleElement)
     
     let markdownCSSPath = cssPath + Path("markdown.css")
-    try markdownCSSPath.write(markdownStyle)
+    try markdownCSSPath.write(markdownStyleElement)
     
     let markdownSmallCSSPath = cssPath + Path("markdown-small.css")
-    try markdownSmallCSSPath.write(markdownSmallStyle)
+    try markdownSmallCSSPath.write(markdownSmallStyleElement)
+    
+    let commonCSSPath = cssPath + Path("common.css")
+    try commonCSSPath.write(commonStyles.map { $0.element }.joined(separator: "\n"))
+    
+    let indexSectionHeaderCSSPath = cssPath + Path("index-section-header.css")
+    try indexSectionHeaderCSSPath.write(sectionHeaderStyle.element)
 }
 
 private func generateHTML() throws {
     let indexHTMLPath = indexHTMLFolder + Path("index.html")
-    let indexHTML = indexView(article: article).element
+    let indexHTML = indexPage().element
     try indexHTMLPath.write(indexHTML)
 }
 
@@ -46,15 +52,14 @@ private var cssPath: Path { docsFolder + Path("CSS") }
 private var indexHTMLFolder: Path { docsFolder }
 private var htmlPath: Path { docsFolder + Path("HTML") }
 
-private var kickOffStyle: String { KickOffStyle().element }
-private var navStyle: String { NavStyle().element }
-private var bodyStyle: String { DarkIndexBodyStyle().element }
-private var articleStyle: String { ArticleStyle().element }
-private var markdownStyle: String { MarkdownStyle(type: .wide).element }
-private var markdownSmallStyle: String { MarkdownStyle(type: .small).element }
+private var kickOffStyleElement: String { KickOffStyle().element }
+private var navStyleElement: String { NavStyle().element }
+private var bodyStyleElement: String { DarkIndexBodyStyle().element }
+private var articleStyleElement: String { ArticleStyle().element }
+private var markdownStyleElement: String { MarkdownStyle(type: .wide).element }
+private var markdownSmallStyleElement: String { MarkdownStyle(type: .small).element }
 
 private var contentPath: Path { Path.current + "Sources/Pages/Articles/Contents" }
 private var markdownPath: Path { contentPath + "1/1.md" }
 private var markdown: String { try! markdownPath.read() }
-private var content: ArticleContent { .init(types: [.markdown(content: markdown)]) }
-private var article: Article { .init(content: content) }
+private var article: Article { .init(markdown: markdown) }
