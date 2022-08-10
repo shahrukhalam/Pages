@@ -13,9 +13,9 @@ public struct MarkdownStyle: CSSStyle {
     
     public var element: String
     
-    public init() {
+    public init(type: CSSLink.DeviceType) {
         let containerStyle = ClassStyle(forClass: .markdown)
-            .size(width: .percentage(60))
+            .size(width: type == .wide ? .percentage(60) : .percentage(90))
             .margin(left: .auto, right: .auto)
         let h1Style = ClassStyle(forClass: .markdown, withTag: .enclosing(.headings(.h1)))
             .padding(top: .pixel(20), bottom: .pixel(20))

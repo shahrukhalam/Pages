@@ -18,7 +18,8 @@ public func indexView(article: Article) -> some View {
                 CSSLink(path: "CSS/nav.css")
                 CSSLink(path: "CSS/body.css")
                 CSSLink(path: "CSS/article.css")
-                CSSLink(path: "CSS/markdown.css")
+                CSSLink(path: "CSS/markdown.css", type: .wide)
+                CSSLink(path: "CSS/markdown-small.css", type: .small)
                 CSSLink(path: "CSS/source.css")
             }
             

@@ -30,6 +30,7 @@ class StyleTests: XCTestCase {
         padding: 16px 16px 16px 16px;
         display: inline-block;
         text-decoration: none;
+        font-size: 125%;
         }
         .activeLink {
         color: rgba(139, 139, 139, 1.0);
@@ -77,7 +78,7 @@ class StyleTests: XCTestCase {
     }
     
     func testMarkdownStyle() {
-        let markdownStyle = MarkdownStyle()
+        let markdownStyle = MarkdownStyle(type: .wide)
         
         let expectation =
             """
@@ -87,17 +88,17 @@ class StyleTests: XCTestCase {
         }
         .markdown h1 {
         padding: 20px 0px 20px 0px;
-        font-size: 48px;
+        font-size: 300%;
         text-align: center;
         }
         .markdown h2 {
         padding: 10px 0px 10px 0px;
-        font-size: 40px;
+        font-size: 250%;
         }
         .markdown p {
         padding: 10px 0px 10px 0px;
-        font-size: 20px;
-        line-height: 28px;
+        font-size: 125%;
+        line-height: 140%;
         }
         """
         

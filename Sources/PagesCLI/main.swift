@@ -30,6 +30,9 @@ private func generateCSS() throws {
     
     let markdownCSSPath = cssPath + Path("markdown.css")
     try markdownCSSPath.write(markdownStyle)
+    
+    let markdownSmallCSSPath = cssPath + Path("markdown-small.css")
+    try markdownSmallCSSPath.write(markdownSmallStyle)
 }
 
 private func generateHTML() throws {
@@ -47,7 +50,8 @@ private var kickOffStyle: String { KickOffStyle().element }
 private var navStyle: String { NavStyle().element }
 private var bodyStyle: String { DarkIndexBodyStyle().element }
 private var articleStyle: String { ArticleStyle().element }
-private var markdownStyle: String { MarkdownStyle().element }
+private var markdownStyle: String { MarkdownStyle(type: .wide).element }
+private var markdownSmallStyle: String { MarkdownStyle(type: .small).element }
 
 private var contentPath: Path { Path.current + "Sources/Pages/Articles/Contents" }
 private var markdownPath: Path { contentPath + "1/1.md" }
