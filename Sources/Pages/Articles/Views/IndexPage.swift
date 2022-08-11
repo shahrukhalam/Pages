@@ -36,14 +36,14 @@ private struct SectionHeaderDetail {
     let title: String
     let subtitle: String
     let image: String
-    let alernateText: String
+    let alternateText: String
 }
 
 private extension SectionHeaderDetail {
     static let `default`: Self = .init(title: "SwiftUI",
-                                       subtitle: "Adopt the newest features in the Swift ecosystem.",
-                                       image: "Images/1/wonder1.jpg",
-                                       alernateText: "Some Image")
+                                       subtitle: "Adopt the newest features in the Swift ecosystem to help you build better apps.",
+                                       image: "Images/1/swiftUI.png",
+                                       alternateText: "Some Image")
 }
 
 private func sectionHeader(detail: SectionHeaderDetail) -> some HTMLBodyContentView {
@@ -53,14 +53,26 @@ private func sectionHeader(detail: SectionHeaderDetail) -> some HTMLBodyContentV
                 .identifyBy(cssClasses: [.primaryTitle, .centerText])
             Headings(detail.subtitle)
                 .identifyBy(cssClasses: [.secondarySubTitle, .centerText])
-            Image(detail.image, alternateText: detail.alernateText)
-                .size(width: .percentage(100))
-                .padding(top: .pixel(30))
         }
+
+        Div {
+            Div {
+                Headings(detail.title)
+                    .identifyBy(cssClasses: [.secondarySmallTitle])
+                Headings(detail.subtitle)
+                    .identifyBy(cssClasses: [.tertiarySubTitle])
+            }
+            .position(.absolute, left: .percentage(60), top: .percentage(40), right: .percentage(10))
+
+            Image(detail.image, alternateText: detail.alternateText)
+                .size(width: .percentage(100))
+        }
+        .padding(top: .pixel(30))
+        .position(.relative)
     }
     .identifyBy(cssClass: .sectionHeader)
 }
 
 public let sectionHeaderStyle = ClassStyle(forClass: .sectionHeader)
-    .size(width: .percentage(60))
+    .size(width: .percentage(70))
     .margin(left: .auto, right: .auto)

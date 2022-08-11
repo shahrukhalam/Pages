@@ -26,14 +26,42 @@ private let secondaryTitleStyle = ClassStyle(forClass: .secondaryTitle)
     .font(size: .percentage(200)) // 32px
     .font(weight: .number(600))
 
-private let primarySubTitleStyle = ClassStyle(forClass: .primarySubTitle)
+private let tertiaryTitleStyle = ClassStyle(forClass: .tertiaryTitle)
+    .font(size: .percentage(150)) // 24px
+    .font(weight: .number(600))
+
+private let primarySmallTitleStyle = ClassStyle(forClass: .primarySmallTitle)
     .padding(top: .pixel(5), bottom: .pixel(5))
+    .font(size: .percentage(150)) // 24px
+    .font(weight: .number(600))
+
+private let secondarySmallTitleStyle = ClassStyle(forClass: .secondarySmallTitle)
+    .padding(top: .pixel(5), bottom: .pixel(5))
+    .font(size: .percentage(125)) // 20px
+    .font(weight: .number(600))
+
+private let tertiarySmallTitleStyle = ClassStyle(forClass: .tertiarySmallTitle)
+    .font(size: .percentage(110)) // 17px
+    .font(weight: .number(600))
+
+private let primaryLargeSubTitleStyle = ClassStyle(forClass: .primaryLargeSubTitle)
+    .padding(top: .pixel(10), bottom: .pixel(10))
     .font(size: .percentage(200)) // 32px
     .font(weight: .number(400))
 
-private let secondarySubTitleStyle = ClassStyle(forClass: .secondarySubTitle)
+private let primarySubTitleStyle = ClassStyle(forClass: .primarySubTitle)
+    .padding(top: .pixel(5), bottom: .pixel(5))
     .font(size: .percentage(150)) // 24px
     .font(weight: .number(400))
+
+private let secondarySubTitleStyle = ClassStyle(forClass: .secondarySubTitle)
+    .font(size: .percentage(125)) // 24px
+    .font(weight: .number(400))
+
+private let tertiarySubTitleStyle = ClassStyle(forClass: .tertiarySubTitle)
+    .font(size: .percentage(110)) // 17px
+    .font(weight: .number(400))
+    .lineHeight(.percentage(140))
 
 private let centerTextStyle = ClassStyle(forClass: .centerText)
     .align(.center)
@@ -50,8 +78,14 @@ public let commonStyles = [
     tertiaryLargeTitleStyle,
     primaryTitleStyle,
     secondaryTitleStyle,
+    tertiaryTitleStyle,
+    primarySmallTitleStyle,
+    secondarySmallTitleStyle,
+    tertiarySmallTitleStyle,
+    primaryLargeSubTitleStyle,
     primarySubTitleStyle,
     secondarySubTitleStyle,
+    tertiarySubTitleStyle,
     centerTextStyle,
     centerDivXStyle,
     centerDivYStyle
