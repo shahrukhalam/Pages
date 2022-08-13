@@ -12,7 +12,7 @@ public struct ImageDescription {
 
 extension ImageDescription {
     static let swiftUI: Self = .init(
-        url: "Images/1/SwiftUI.png",
+        url: "Images/1/swiftUI.png",
         description: "Donut on a Truck app on iPad, iPhone and Mac"
     )
 }
