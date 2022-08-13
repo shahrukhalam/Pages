@@ -64,6 +64,11 @@ private let tertiarySubTitleStyle = ClassStyle(forClass: .tertiarySubTitle)
     .font(weight: .number(400))
     .lineHeight(.percentage(140))
 
+private let primarySmallSubTitleStyle = ClassStyle(forClass: .primarySmallSubTitle)
+    .font(size: .percentage(90)) // ?px
+    .font(weight: .number(400))
+    .lineHeight(.percentage(140))
+
 public let fontStyles = [
     primaryLargeTitleStyle,
     secondaryLargeTitleStyle,
@@ -77,5 +82,6 @@ public let fontStyles = [
     primaryLargeSubTitleStyle,
     primarySubTitleStyle,
     secondarySubTitleStyle,
-    tertiarySubTitleStyle
+    tertiarySubTitleStyle,
+    primarySmallSubTitleStyle
 ]

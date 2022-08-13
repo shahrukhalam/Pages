@@ -1,0 +1,8 @@
+.gridContainer {
+display: grid;
+grid-template-columns: auto auto;
+grid-column-gap: 12px;
+}
+.gridContainer:hover a {
+text-decoration: underline;
+}

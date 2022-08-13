@@ -48,6 +48,9 @@ private func generateCSS() throws {
     
     let indexSectionHeaderHeroCSSPath = cssPath + Path("index-section-header-hero-small.css")
     try indexSectionHeaderHeroCSSPath.write(sectionHeaderHeroSmallStyle.element)
+    
+    let gridCSSPath = cssPath + Path("grid.css")
+    try gridCSSPath.write(gridContainerStyle.element)
 }
 
 private func generateHTML() throws {
