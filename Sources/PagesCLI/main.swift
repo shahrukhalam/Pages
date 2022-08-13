@@ -46,11 +46,17 @@ private func generateCSS() throws {
     let indexSectionHeaderCSSPath = cssPath + Path("index-section-header.css")
     try indexSectionHeaderCSSPath.write(sectionHeaderStyle)
     
+    let indexSectionHeaderSmallCSSPath = cssPath + Path("index-section-header-small.css")
+    try indexSectionHeaderSmallCSSPath.write(sectionHeaderSmallStyle)
+    
     let indexSectionHeaderHeroCSSPath = cssPath + Path("index-section-header-hero-small.css")
     try indexSectionHeaderHeroCSSPath.write(sectionHeaderHeroSmallStyle.element)
     
     let gridCSSPath = cssPath + Path("grid.css")
     try gridCSSPath.write(gridContainerStyle.element)
+    
+    let gridSmallCSSPath = cssPath + Path("grid-small.css")
+    try gridSmallCSSPath.write(gridContainerSmallStyle.element)
 }
 
 private func generateHTML() throws {

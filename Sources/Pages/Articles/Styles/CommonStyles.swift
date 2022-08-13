@@ -18,10 +18,10 @@ private let centerDivYStyle = ClassStyle(forClass: .centerDivY)
 
 private let linkStyle = ClassStyle(forClass: .link)
     .foregroundColor(.DarkHoverNavBarItem)
+    .font(size: .percentage(100))
     .textDecoration(.none)
 
 private let linkHoverStyle = ClassStyle(forClass: .link, withCSSTag: .hover)
-    .foregroundColor(.DarkHoverNavBarItem)
     .textDecoration(.underline)
 
 public let commonStyles = [

@@ -65,7 +65,7 @@ private let tertiarySubTitleStyle = ClassStyle(forClass: .tertiarySubTitle)
     .lineHeight(.percentage(140))
 
 private let primarySmallSubTitleStyle = ClassStyle(forClass: .primarySmallSubTitle)
-    .font(size: .percentage(90)) // ?px
+    .font(size: .percentage(90)) // 14px
     .font(weight: .number(400))
     .lineHeight(.percentage(140))
 

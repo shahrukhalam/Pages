@@ -1,0 +1,7 @@
+.sectionHeader {
+width: 90%;
+margin: 0px auto 0px auto;
+}
+.sectionHeaderHero:hover a {
+text-decoration: underline;
+}

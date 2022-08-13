@@ -16,9 +16,7 @@ public func indexPage() -> some View {
                 Meta(.name(.author, content: "Shahrukh Alam"))
                 Meta(.viewport(width: .deviceWidth, scale: .full))
                 commonCSSLinks
-                CSSLink(path: "CSS/index-section-header.css")
-                CSSLink(path: "CSS/index-section-header-hero-small.css", type: .small)
-                CSSLink(path: "CSS/grid.css")
+                indexCSSLinks
             }
             
             Body {
@@ -27,6 +25,16 @@ public func indexPage() -> some View {
             }
         }
     }
+}
+
+private var indexCSSLinks: some HTMLContentView {
+    AnyView([
+        CSSLink(path: "CSS/index-section-header.css", type: .wide),
+        CSSLink(path: "CSS/index-section-header-small.css", type: .small),
+        CSSLink(path: "CSS/index-section-header-hero-small.css", type: .small),
+        CSSLink(path: "CSS/grid.css", type: .wide),
+        CSSLink(path: "CSS/grid-small.css", type: .small)
+    ])
 }
 
 private struct SectionHeader {
@@ -77,6 +85,8 @@ private func sectionHeaderHero(with model: Detail) -> some HTMLBodyContentView {
                 .identifyBy(cssClasses: [.tertiarySubTitle])
             Link(text: "Read", url: "https://www.google.com")
                 .identifyBy(cssClass: .link)
+                .display(.inlineBlock)
+                .margin(top: .pixel(11))
         }
         .position(.absolute, left: .percentage(60), top: .percentage(40), right: .percentage(10))
         
@@ -99,6 +109,13 @@ private let sectionHeaderOwnStyle = ClassStyle(forClass: .sectionHeader)
 private let sectionHeaderLinkStyle = ClassStyle(.sectionHeaderHero, cssTag: .hover, tag: .enclosing(.link))
     .textDecoration(.underline)
 public let sectionHeaderStyle = [sectionHeaderOwnStyle, sectionHeaderLinkStyle]
+    .map { $0.element }
+    .joined(separator: "\n")
+
+private let sectionHeaderSmallOwnStyle = ClassStyle(forClass: .sectionHeader)
+    .size(width: .percentage(90))
+    .margin(left: .auto, right: .auto)
+public let sectionHeaderSmallStyle = [sectionHeaderSmallOwnStyle, sectionHeaderLinkStyle]
     .map { $0.element }
     .joined(separator: "\n")
 
@@ -130,12 +147,13 @@ private struct Grid: HTMLBodyContentView {
                     Link(text: "Read", url: "https://www.google.com")
                         .identifyBy(cssClass: .link)
                         .display(.inlineBlock)
-                        .margin(top: .pixel(32))
+                        .margin(top: .pixel(16))
                 }
                 .margin(uniform: .pixel(16))
             }
                 .backgroundColor(.html(.Black))
                 .cornerRadius(.pixel(16))
+                .identifyBy(cssClass: .gridItem)
             
             return AnyView(gridView)
         }
@@ -146,12 +164,20 @@ private struct Grid: HTMLBodyContentView {
     }
 }
 
-public let gridContainerOwnStyle = ClassStyle(forClass: .gridContainer)
+private let gridContainerOwnStyle = ClassStyle(forClass: .gridContainer)
     .display(.grid)
     .gridNumberOfColumnsWithWidth([.auto, .auto])
     .gridColumn(gap: 12)
-private let gridContainerLinkStyle = ClassStyle(.gridContainer, cssTag: .hover, tag: .enclosing(.link))
+private let gridContainerLinkStyle = ClassStyle(.gridItem, cssTag: .hover, tag: .enclosing(.link))
     .textDecoration(.underline)
 public let gridContainerStyle = [gridContainerOwnStyle, gridContainerLinkStyle]
+    .map { $0.element }
+    .joined(separator: "\n")
+
+private let gridContainerSmallOwnStyle = ClassStyle(forClass: .gridContainer)
+    .display(.grid)
+    .gridNumberOfColumnsWithWidth([.auto])
+    .gridRow(gap: 12)
+public let gridContainerSmallStyle = [gridContainerSmallOwnStyle, gridContainerLinkStyle]
     .map { $0.element }
     .joined(separator: "\n")

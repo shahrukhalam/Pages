@@ -9,9 +9,9 @@ margin: auto 0px auto 0px;
 }
 .link {
 color: rgba(41, 151, 255, 1.0);
+font-size: 100%;
 text-decoration: none;
 }
 .link:hover {
-color: rgba(41, 151, 255, 1.0);
 text-decoration: underline;
 }
