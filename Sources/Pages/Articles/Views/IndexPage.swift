@@ -69,6 +69,7 @@ private func sectionHeader(detail: SectionHeaderDetail) -> some HTMLBodyContentV
 
             Image(detail.image, alternateText: detail.alternateText)
                 .size(width: .percentage(100))
+                .cornerRadius(.pixel(16))
         }
         .padding(top: .pixel(30))
         .position(.relative)

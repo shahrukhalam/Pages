@@ -59,6 +59,7 @@ private let secondarySubTitleStyle = ClassStyle(forClass: .secondarySubTitle)
     .font(weight: .number(400))
 
 private let tertiarySubTitleStyle = ClassStyle(forClass: .tertiarySubTitle)
+    .padding(top: .pixel(5), bottom: .pixel(5))
     .font(size: .percentage(110)) // 17px
     .font(weight: .number(400))
     .lineHeight(.percentage(140))
