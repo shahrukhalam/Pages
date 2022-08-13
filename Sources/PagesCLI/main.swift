@@ -37,8 +37,17 @@ private func generateCSS() throws {
     let commonCSSPath = cssPath + Path("common.css")
     try commonCSSPath.write(commonStyles.map { $0.element }.joined(separator: "\n"))
     
+    let fontCSSPath = cssPath + Path("font.css")
+    try fontCSSPath.write(fontStyles.map { $0.element }.joined(separator: "\n"))
+
+    let fontCSSPathSmall = cssPath + Path("font-small.css")
+    try fontCSSPathSmall.write(fontStylesSmall.map { $0.element }.joined(separator: "\n"))
+    
     let indexSectionHeaderCSSPath = cssPath + Path("index-section-header.css")
-    try indexSectionHeaderCSSPath.write(sectionHeaderStyle.element)
+    try indexSectionHeaderCSSPath.write(sectionHeaderStyle)
+    
+    let indexSectionHeaderHeroCSSPath = cssPath + Path("index-section-header-hero-small.css")
+    try indexSectionHeaderHeroCSSPath.write(sectionHeaderHeroSmallStyle.element)
 }
 
 private func generateHTML() throws {

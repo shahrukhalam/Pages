@@ -17,6 +17,7 @@ public func indexPage() -> some View {
                 Meta(.viewport(width: .deviceWidth, scale: .full))
                 commonCSSLinks
                 CSSLink(path: "CSS/index-section-header.css")
+                CSSLink(path: "CSS/index-section-header-hero-small.css", type: .small)
             }
             
             Body {
@@ -61,6 +62,8 @@ private func sectionHeader(detail: SectionHeaderDetail) -> some HTMLBodyContentV
                     .identifyBy(cssClasses: [.secondarySmallTitle])
                 Headings(detail.subtitle)
                     .identifyBy(cssClasses: [.tertiarySubTitle])
+                Link(text: "Read", url: "")
+                    .identifyBy(cssClass: .link)
             }
             .position(.absolute, left: .percentage(60), top: .percentage(40), right: .percentage(10))
 
@@ -69,10 +72,19 @@ private func sectionHeader(detail: SectionHeaderDetail) -> some HTMLBodyContentV
         }
         .padding(top: .pixel(30))
         .position(.relative)
+        .identifyBy(cssClass: .sectionHeaderHero)
     }
     .identifyBy(cssClass: .sectionHeader)
 }
 
-public let sectionHeaderStyle = ClassStyle(forClass: .sectionHeader)
+private let sectionHeaderOwnStyle = ClassStyle(forClass: .sectionHeader)
     .size(width: .percentage(70))
     .margin(left: .auto, right: .auto)
+private let sectionHeaderLinkStyle = ClassStyle(.sectionHeaderHero, cssTag: .hover, tag: .enclosing(.link))
+    .textDecoration(.underline)
+public let sectionHeaderStyle = [sectionHeaderOwnStyle, sectionHeaderLinkStyle]
+    .map { $0.element }
+    .joined(separator: "\n")
+
+public let sectionHeaderHeroSmallStyle = ClassStyle(forClass: .sectionHeaderHero)
+    .display(.none)

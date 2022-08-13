@@ -35,7 +35,7 @@ public struct NavStyle: CSSStyle {
         let inactiveLinkStyle = ClassStyle(forClass: .inactiveLink)
             .foregroundColor(.html(.White))
         
-        let hoverLinkStyle = TagStyle(cssTag: .hoverLink)
+        let hoverLinkStyle = TagStyle(for: .enclosing(.link), with: .hover)
             .foregroundColor(Color.DarkHoverNavBarItem)
         
         let classStyles = [navStyle, linkStyle, activeLinkStyle, inactiveLinkStyle]

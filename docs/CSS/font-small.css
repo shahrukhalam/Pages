@@ -1,0 +1,56 @@
+.primaryLargeTitle {
+padding: 20px 0px 20px 0px;
+font-size: 150%;
+}
+.secondaryLargeTitle {
+font-size: 125%;
+}
+.tertiaryLargeTitle {
+font-size: 100%;
+}
+.primaryTitle {
+padding: 10px 0px 10px 0px;
+font-size: 125%;
+font-weight: 600;
+}
+.secondaryTitle {
+font-size: 100%;
+font-weight: 600;
+}
+.tertiaryTitle {
+font-size: 75%;
+font-weight: 600;
+}
+.primarySmallTitle {
+padding: 5px 0px 5px 0px;
+font-size: 75%;
+font-weight: 600;
+}
+.secondarySmallTitle {
+padding: 5px 0px 5px 0px;
+font-size: 60%;
+font-weight: 600;
+}
+.tertiarySmallTitle {
+font-size: 55%;
+font-weight: 600;
+}
+.primaryLargeSubTitle {
+padding: 10px 0px 10px 0px;
+font-size: 100%;
+font-weight: 400;
+}
+.primarySubTitle {
+padding: 5px 0px 5px 0px;
+font-size: 75%;
+font-weight: 400;
+}
+.secondarySubTitle {
+font-size: 60%;
+font-weight: 400;
+}
+.tertiarySubTitle {
+font-size: 55%;
+font-weight: 400;
+line-height: 140%;
+}
