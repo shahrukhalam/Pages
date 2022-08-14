@@ -78,9 +78,9 @@ private func sectionHeaderDescription(with model: Description) -> some HTMLBodyC
     Div {
         Div {
             Headings(model.title)
-                .identifyBy(cssClasses: [.primaryTitle, .centerText])
+                .identifyBy(cssClasses: [.largeTitle, .centerText])
             Headings(model.subtitle)
-                .identifyBy(cssClasses: [.secondarySubTitle, .centerText])
+                .identifyBy(cssClasses: [.body, .centerText])
         }
     }
 }
@@ -89,9 +89,9 @@ private func sectionHeaderHero(with model: Detail) -> some HTMLBodyContentView {
     Div {
         Div {
             Headings(model.description.title)
-                .identifyBy(cssClasses: [.secondarySmallTitle])
+                .identifyBy(cssClass: .title3)
             Headings(model.description.subtitle)
-                .identifyBy(cssClasses: [.tertiarySubTitle])
+                .identifyBy(cssClass: .callout)
             Link(text: "Read", url: "https://www.google.com")
                 .identifyBy(cssClass: .link)
                 .display(.inlineBlock)
@@ -153,9 +153,9 @@ private struct Grid: HTMLBodyContentView {
                 
                 Div {
                     Headings(detail.description.title)
-                        .identifyBy(cssClass: .tertiarySmallTitle)
+                        .identifyBy(cssClass: .headline)
                     Headings(detail.description.subtitle)
-                        .identifyBy(cssClass: .primarySmallSubTitle)
+                        .identifyBy(cssClass: .subheadline)
                     Link(text: "Read", url: "https://www.google.com")
                         .identifyBy(cssClass: .link)
                         .display(.inlineBlock)
