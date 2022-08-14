@@ -31,6 +31,8 @@ private var indexCSSLinks: some HTMLContentView {
     AnyView([
         CSSLink(path: "CSS/index-section-header.css", type: .wide),
         CSSLink(path: "CSS/index-section-header-small.css", type: .small),
+        CSSLink(path: "CSS/index-section-header-content.css", type: .wide),
+        CSSLink(path: "CSS/index-section-header-content-small.css", type: .small),
         CSSLink(path: "CSS/index-section-header-hero-small.css", type: .small),
         CSSLink(path: "CSS/grid.css", type: .wide),
         CSSLink(path: "CSS/grid-small.css", type: .small),
@@ -53,10 +55,15 @@ private func sectionHeader(with model: SectionHeader) -> some HTMLBodyContentVie
     Div {
         sectionHeaderContent(with: model)
     }
-    .margin(uniform: .pixel(20))
-    .padding(top: .pixel(65), bottom: .pixel(75))
+    .identifyBy(cssClass: .sectionHeader)
     .backgroundColor(.DarkArticleBackground)
 }
+
+public let sectionHeaderStyle = ClassStyle(forClass: .sectionHeader)
+    .margin(uniform: .pixel(20))
+
+public let sectionHeaderSmallStyle = ClassStyle(forClass: .sectionHeader)
+    .margin(top: .pixel(20), bottom: .pixel(20))
 
 private func sectionHeaderContent(with model: SectionHeader) -> some HTMLBodyContentView {
     Div {
@@ -64,7 +71,7 @@ private func sectionHeaderContent(with model: SectionHeader) -> some HTMLBodyCon
         sectionHeaderHero(with: model.hero)
         sectionHeaderGrid(with: model.grids)
     }
-    .identifyBy(cssClass: .sectionHeader)
+    .identifyBy(cssClass: .sectionHeaderContent)
 }
 
 private func sectionHeaderDescription(with model: Description) -> some HTMLBodyContentView {
@@ -105,19 +112,21 @@ private func sectionHeaderGrid(with model: [(Detail, isHiddenInDesktop: Bool)]) 
     Grid(model: model)
 }
 
-private let sectionHeaderOwnStyle = ClassStyle(forClass: .sectionHeader)
+private let sectionHeaderContentOwnStyle = ClassStyle(forClass: .sectionHeaderContent)
     .size(width: .percentage(70))
     .margin(left: .auto, right: .auto)
-private let sectionHeaderLinkStyle = ClassStyle(.sectionHeaderHero, cssTag: .hover, tag: .enclosing(.link))
+    .padding(top: .pixel(65), bottom: .pixel(75))
+private let sectionHeaderContentLinkStyle = ClassStyle(.sectionHeaderHero, cssTag: .hover, tag: .enclosing(.link))
     .textDecoration(.underline)
-public let sectionHeaderStyle = [sectionHeaderOwnStyle, sectionHeaderLinkStyle]
+public let sectionHeaderContentStyle = [sectionHeaderContentOwnStyle, sectionHeaderContentLinkStyle]
     .map { $0.element }
     .joined(separator: "\n")
 
-private let sectionHeaderSmallOwnStyle = ClassStyle(forClass: .sectionHeader)
-    .size(width: .percentage(90))
-    .margin(left: .auto, right: .auto)
-public let sectionHeaderSmallStyle = [sectionHeaderSmallOwnStyle, sectionHeaderLinkStyle]
+private let sectionHeaderContentSmallOwnStyle = ClassStyle(forClass: .sectionHeaderContent)
+    .boxSize(.borderBox)
+    .size(width: .percentage(100))
+    .padding(left: .pixel(20), top: .pixel(65), right: .pixel(20), bottom: .pixel(75))
+public let sectionHeaderContentSmallStyle = [sectionHeaderContentSmallOwnStyle, sectionHeaderContentLinkStyle]
     .map { $0.element }
     .joined(separator: "\n")
 

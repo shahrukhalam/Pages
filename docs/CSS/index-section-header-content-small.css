@@ -1,0 +1,8 @@
+.sectionHeaderContent {
+box-sizing: border-box;
+width: 100%;
+padding: 65px 20px 75px 20px;
+}
+.sectionHeaderHero:hover a {
+text-decoration: underline;
+}

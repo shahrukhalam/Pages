@@ -50,10 +50,16 @@ private func generateCSS() throws {
     try fontCSSPathSmall.write(fontStylesSmall.map { $0.element }.joined(separator: "\n"))
     
     let indexSectionHeaderCSSPath = cssPath + Path("index-section-header.css")
-    try indexSectionHeaderCSSPath.write(sectionHeaderStyle)
+    try indexSectionHeaderCSSPath.write(sectionHeaderStyle.element)
     
     let indexSectionHeaderSmallCSSPath = cssPath + Path("index-section-header-small.css")
-    try indexSectionHeaderSmallCSSPath.write(sectionHeaderSmallStyle)
+    try indexSectionHeaderSmallCSSPath.write(sectionHeaderSmallStyle.element)
+    
+    let indexSectionHeaderContentCSSPath = cssPath + Path("index-section-header-content.css")
+    try indexSectionHeaderContentCSSPath.write(sectionHeaderContentStyle)
+    
+    let indexSectionHeaderContentSmallCSSPath = cssPath + Path("index-section-header-content-small.css")
+    try indexSectionHeaderContentSmallCSSPath.write(sectionHeaderContentSmallStyle)
     
     let indexSectionHeaderHeroCSSPath = cssPath + Path("index-section-header-hero-small.css")
     try indexSectionHeaderHeroCSSPath.write(sectionHeaderHeroSmallStyle.element)
