@@ -37,6 +37,12 @@ private func generateCSS() throws {
     let commonCSSPath = cssPath + Path("common.css")
     try commonCSSPath.write(commonStyles.map { $0.element }.joined(separator: "\n"))
     
+    let commonWideCSSPath = cssPath + Path("common-wide.css")
+    try commonWideCSSPath.write(desktopHiddenStyle.element)
+
+    let commonSmallCSSPath = cssPath + Path("common-small.css")
+    try commonSmallCSSPath.write(mobileHiddenStyle.element)
+    
     let fontCSSPath = cssPath + Path("font.css")
     try fontCSSPath.write(fontStyles.map { $0.element }.joined(separator: "\n"))
 

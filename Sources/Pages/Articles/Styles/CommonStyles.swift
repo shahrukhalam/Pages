@@ -24,10 +24,16 @@ private let linkStyle = ClassStyle(forClass: .link)
 private let linkHoverStyle = ClassStyle(forClass: .link, withCSSTag: .hover)
     .textDecoration(.underline)
 
+public let desktopHiddenStyle = ClassStyle(forClass: .desktopHidden)
+    .display(.none)
+
+public let mobileHiddenStyle = ClassStyle(forClass: .mobileHidden)
+    .display(.none)
+
 public let commonStyles = [
     centerTextStyle,
     centerDivXStyle,
     centerDivYStyle,
     linkStyle,
-    linkHoverStyle
+    linkHoverStyle,
 ]

@@ -33,18 +33,20 @@ private var indexCSSLinks: some HTMLContentView {
         CSSLink(path: "CSS/index-section-header-small.css", type: .small),
         CSSLink(path: "CSS/index-section-header-hero-small.css", type: .small),
         CSSLink(path: "CSS/grid.css", type: .wide),
-        CSSLink(path: "CSS/grid-small.css", type: .small)
+        CSSLink(path: "CSS/grid-small.css", type: .small),
+        CSSLink(path: "CSS/common-wide.css", type: .wide),
+        CSSLink(path: "CSS/common-small.css", type: .small)
     ])
 }
 
 private struct SectionHeader {
     let description: Description
     let hero: Detail
-    let grids: [Detail]
+    let grids: [(Detail, isHiddenInDesktop: Bool)]
 }
 
 private extension SectionHeader {
-    static let mock: Self = .init(description: .swift, hero: .swiftUI, grids: [.swiftUI, .swiftUI])
+    static let mock: Self = .init(description: .swift, hero: .swiftUI, grids: [(.swiftUI, true), (.swiftUI, false), (.swiftUI, false)])
 }
 
 private func sectionHeader(with model: SectionHeader) -> some HTMLBodyContentView {
@@ -52,7 +54,7 @@ private func sectionHeader(with model: SectionHeader) -> some HTMLBodyContentVie
         sectionHeaderContent(with: model)
     }
     .margin(uniform: .pixel(20))
-    .padding(top: .pixel(50), bottom: .pixel(50))
+    .padding(top: .pixel(65), bottom: .pixel(75))
     .backgroundColor(.DarkArticleBackground)
 }
 
@@ -99,7 +101,7 @@ private func sectionHeaderHero(with model: Detail) -> some HTMLBodyContentView {
     .identifyBy(cssClass: .sectionHeaderHero)
 }
 
-private func sectionHeaderGrid(with model: [Detail]) -> some HTMLBodyContentView {
+private func sectionHeaderGrid(with model: [(Detail, isHiddenInDesktop: Bool)]) -> some HTMLBodyContentView {
     Grid(model: model)
 }
 
@@ -126,14 +128,15 @@ private struct Grid: HTMLBodyContentView {
     var tag: Tag = .empty
     var attributes: [Attribute] = []
     
-    private let model: [Detail]
+    private let model: [(Detail, isHiddenInDesktop: Bool)]
     
-    init(model: [Detail]) {
+    init(model: [(Detail, isHiddenInDesktop: Bool)]) {
         self.model = model
     }
     
     var body: some HTMLBodyContentView {
-        let gridViews = model.map { detail -> AnyView in
+        let gridViews = model.map { (detail, isHiddenInDesktop) -> AnyView in
+            let classes: [CSSClass] = isHiddenInDesktop ? [.gridItem, .desktopHidden] : [.gridItem]
             let gridView = Div {
                 Image(detail.image.url, alternateText: detail.image.description)
                     .size(width: .percentage(100))
@@ -153,7 +156,7 @@ private struct Grid: HTMLBodyContentView {
             }
                 .backgroundColor(.html(.Black))
                 .cornerRadius(.pixel(16))
-                .identifyBy(cssClass: .gridItem)
+                .identifyBy(cssClasses: classes)
             
             return AnyView(gridView)
         }
