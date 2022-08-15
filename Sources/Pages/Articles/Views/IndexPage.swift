@@ -48,7 +48,7 @@ private struct SectionHeader {
 }
 
 private extension SectionHeader {
-    static let mock: Self = .init(description: .swift, hero: .swiftUI, grids: [(.swiftUI, true), (.swiftUI, false), (.swiftUI, false)])
+    static let mock: Self = .init(description: .swift, hero: .swiftUI, grids: [(.swiftUI, true), (.swiftUI, false), (.frameworks, false)])
 }
 
 private func sectionHeader(with model: SectionHeader) -> some HTMLBodyContentView {
@@ -87,12 +87,15 @@ private func sectionHeaderDescription(with model: Description) -> some HTMLBodyC
 
 private func sectionHeaderHero(with model: Detail) -> some HTMLBodyContentView {
     Div {
+        Link(text: .empty, url: model.link.url)
+            .position(.absolute, left: .pixel(0), top: .pixel(0), right: .pixel(0), bottom: .pixel(0))
+        
         Div {
             Headings(model.description.title)
                 .identifyBy(cssClass: .title3)
             Headings(model.description.subtitle)
                 .identifyBy(cssClass: .callout)
-            Link(text: "Read", url: "https://www.google.com")
+            Link(text: model.link.text, url: model.link.url)
                 .identifyBy(cssClass: .link)
                 .display(.inlineBlock)
                 .margin(top: .pixel(11))
@@ -147,6 +150,9 @@ private struct Grid: HTMLBodyContentView {
         let gridViews = model.map { (detail, isHiddenInDesktop) -> AnyView in
             let classes: [CSSClass] = isHiddenInDesktop ? [.gridItem, .desktopHidden] : [.gridItem]
             let gridView = Div {
+                Link(text: .empty, url: detail.link.url)
+                    .position(.absolute, left: .pixel(0), top: .pixel(0), right: .pixel(0), bottom: .pixel(0))
+
                 Image(detail.image.url, alternateText: detail.image.description)
                     .size(width: .percentage(100))
                     .cornerRadius([.pixel(16), .pixel(16), .pixel(0), .pixel(0)])
@@ -156,13 +162,14 @@ private struct Grid: HTMLBodyContentView {
                         .identifyBy(cssClass: .headline)
                     Headings(detail.description.subtitle)
                         .identifyBy(cssClass: .subheadline)
-                    Link(text: "Read", url: "https://www.google.com")
+                    Link(text: detail.link.text, url: detail.link.url)
                         .identifyBy(cssClass: .link)
                         .display(.inlineBlock)
                         .margin(top: .pixel(16))
                 }
                 .margin(uniform: .pixel(16))
             }
+                .position(.relative)
                 .backgroundColor(.html(.Black))
                 .cornerRadius(.pixel(16))
                 .identifyBy(cssClasses: classes)

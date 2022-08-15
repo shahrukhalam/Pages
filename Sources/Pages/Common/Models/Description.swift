@@ -20,4 +20,9 @@ extension Description {
         title: "SwiftUI",
         subtitle: "Build Apps with shared code and unique experience for iPad, iPhone and Mac."
     )
+    
+    static let frameworks: Self = .init(
+        title: "Frameworks",
+        subtitle: "Lear how to build modular reusable code."
+    )
 }
