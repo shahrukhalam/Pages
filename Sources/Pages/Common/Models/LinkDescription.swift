@@ -16,7 +16,8 @@ extension LinkDescription {
 
 extension String {
     static var empty: Self { "" }
-    static var indexLink: Self { "/index.html" }
-    static private var articlesHTMLFolder: Self { "/HTML/Articles/" }
+    static var root: Self = "/Pages" // replace `empty` in case of local
+    static var indexLink: Self { root + "/index.html" }
+    static private var articlesHTMLFolder: Self { root + "/HTML/Articles/" }
     static var dynmaicFrameworksLink: Self { .articlesHTMLFolder + "dynamic-framework.html" }
 }
