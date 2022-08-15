@@ -9,8 +9,8 @@ import HTMLDSL
 
 var commonCSSLinks: some HTMLContentView {
     AnyView([
-        CSSLink(path: "/docs/CSS/kickoff.css"),
-        CSSLink(path: "/docs/CSS/nav.css"),
+        CSSLink(path: "CSS/kickoff.css"),
+        CSSLink(path: "CSS/nav.css"),
         CSSLink(path: "/CSS/body.css"),
         CSSLink(path: "/CSS/common.css"),
         CSSLink(path: "/CSS/font.css", type: .wide),
