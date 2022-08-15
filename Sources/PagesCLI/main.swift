@@ -75,6 +75,10 @@ private func generateHTML() throws {
     let indexHTMLPath = indexHTMLFolder + Path("index.html")
     let indexHTML = indexPage().element
     try indexHTMLPath.write(indexHTML)
+    
+    let dynamicFrameworkArticlePath = htmlPath + Path("Articles/dynamic-framework.html")
+    let dynamicFrameworkArticleHTML = articlePage(article: article).element
+    try dynamicFrameworkArticlePath.write(dynamicFrameworkArticleHTML)
 }
 
 private var docsFolder: Path { Path.current + "docs" }
@@ -90,6 +94,6 @@ private var markdownStyleElement: String { MarkdownStyle(type: .wide).element }
 private var markdownSmallStyleElement: String { MarkdownStyle(type: .small).element }
 
 private var contentPath: Path { Path.current + "Sources/Pages/Articles/Contents" }
-private var markdownPath: Path { contentPath + "1/1.md" }
+private var markdownPath: Path { contentPath + "Frameworks/Dynamic.md" }
 private var markdown: String { try! markdownPath.read() }
 private var article: Article { .init(markdown: markdown) }

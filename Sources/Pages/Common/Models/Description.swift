@@ -11,6 +11,11 @@ public struct Description {
 }
 
 extension Description {
+    static let iOSDevelopment: Self = .init(
+        title: "iOS Development",
+        subtitle: "Kickstart your iOS Development journey, from basics to advanced topics."
+    )
+    
     static let swift: Self = .init(
         title: "Swift",
         subtitle: "Adopt the newest features in the Swift ecosystem to help you build better apps."
@@ -23,6 +28,6 @@ extension Description {
     
     static let frameworks: Self = .init(
         title: "Frameworks",
-        subtitle: "Lear how to build modular reusable code."
+        subtitle: "Learn how to build modular, reusable and testable code for multiple platforms."
     )
 }

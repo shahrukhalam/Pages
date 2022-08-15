@@ -11,12 +11,12 @@ public struct LinkDescription {
 }
 
 extension LinkDescription {
-    static let swiftUI: Self = .init(
-        url: "https://www.google.com",
-        text: "Read"
-    )
+    static let dynamicFramework: Self = .init(url: .dynmaicFrameworksLink, text: "Read")
 }
 
 extension String {
     static var empty: Self { "" }
+    static var indexLink: Self { "/index.html" }
+    static private var articlesHTMLFolder: Self { "/HTML/Articles/" }
+    static var dynmaicFrameworksLink: Self { .articlesHTMLFolder + "dynamic-framework.html" }
 }

@@ -11,13 +11,18 @@ public struct ImageDescription {
 }
 
 extension ImageDescription {
+    static let swift: Self = .init(
+        url: "Images/Index/swift.png",
+        description: "Swift bird cruising over air"
+    )
+    
     static let swiftUI: Self = .init(
-        url: "Images/1/swiftUI.png",
+        url: "Images/Index/swiftUI.png",
         description: "Donut on a Truck app on iPad, iPhone and Mac"
     )
     
     static let frameworks: Self = .init(
-        url: "Images/1/wonder2.jpg",
+        url: "Images/Index/xcframework.png",
         description: "Wonder Woman blocking lightning with sword"
     )
 }

@@ -11,7 +11,7 @@ public func indexPage() -> some View {
     Document {
         HTML {
             Head {
-                Title("Server Side Swift Article Tutorial, max 50-60 character, go for long descriptive title")
+                Title("Learn iOS Development")
                 Meta(.characterSet(.utf8))
                 Meta(.name(.author, content: "Shahrukh Alam"))
                 Meta(.viewport(width: .deviceWidth, scale: .full))
@@ -20,7 +20,7 @@ public func indexPage() -> some View {
             }
             
             Body {
-                NavView()
+                NavView(index: 0)
                 sectionHeader(with: .mock)
             }
         }
@@ -29,15 +29,15 @@ public func indexPage() -> some View {
 
 private var indexCSSLinks: some HTMLContentView {
     AnyView([
-        CSSLink(path: "CSS/index-section-header.css", type: .wide),
-        CSSLink(path: "CSS/index-section-header-small.css", type: .small),
-        CSSLink(path: "CSS/index-section-header-content.css", type: .wide),
-        CSSLink(path: "CSS/index-section-header-content-small.css", type: .small),
-        CSSLink(path: "CSS/index-section-header-hero-small.css", type: .small),
-        CSSLink(path: "CSS/grid.css", type: .wide),
-        CSSLink(path: "CSS/grid-small.css", type: .small),
-        CSSLink(path: "CSS/common-wide.css", type: .wide),
-        CSSLink(path: "CSS/common-small.css", type: .small)
+        CSSLink(path: "/CSS/index-section-header.css", type: .wide),
+        CSSLink(path: "/CSS/index-section-header-small.css", type: .small),
+        CSSLink(path: "/CSS/index-section-header-content.css", type: .wide),
+        CSSLink(path: "/CSS/index-section-header-content-small.css", type: .small),
+        CSSLink(path: "/CSS/index-section-header-hero-small.css", type: .small),
+        CSSLink(path: "/CSS/grid.css", type: .wide),
+        CSSLink(path: "/CSS/grid-small.css", type: .small),
+        CSSLink(path: "/CSS/common-wide.css", type: .wide),
+        CSSLink(path: "/CSS/common-small.css", type: .small)
     ])
 }
 
@@ -48,7 +48,7 @@ private struct SectionHeader {
 }
 
 private extension SectionHeader {
-    static let mock: Self = .init(description: .swift, hero: .swiftUI, grids: [(.swiftUI, true), (.swiftUI, false), (.frameworks, false)])
+    static let mock: Self = .init(description: .iOSDevelopment, hero: .swiftUI, grids: [(.swiftUI, true), (.swift, false), (.frameworks, false)])
 }
 
 private func sectionHeader(with model: SectionHeader) -> some HTMLBodyContentView {

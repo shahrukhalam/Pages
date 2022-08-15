@@ -12,6 +12,7 @@ public struct Detail {
 }
 
 extension Detail {
-    static let swiftUI: Self = .init(description: .swiftUI, image: .swiftUI, link: .swiftUI)
-    static let frameworks: Self = .init(description: .frameworks, image: .frameworks, link: .swiftUI)
+    static let swift: Self = .init(description: .swift, image: .swift, link: .dynamicFramework)
+    static let swiftUI: Self = .init(description: .swiftUI, image: .swiftUI, link: .dynamicFramework)
+    static let frameworks: Self = .init(description: .frameworks, image: .frameworks, link: .dynamicFramework)
 }

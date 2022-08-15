@@ -11,12 +11,18 @@ struct NavView: HTMLBodyContentView {
     var tag: Tag = .empty
     var attributes = [Attribute]()
     
+    private let index: Int
+    
+    init(index: Int) {
+        self.index = index
+    }
+    
     var body: some View {
         Div {
-            Link(text: "Home", url: "index.html")
-                .identifyBy(cssClass: .activeLink)
-            Link(text: "About", url: "about.html")
-                .identifyBy(cssClass: .inactiveLink)
+            Link(text: "Home", url: .indexLink)
+                .identifyBy(cssClass: index == 0 ? .activeLink : .inactiveLink)
+            Link(text: "Articles", url: .dynmaicFrameworksLink)
+                .identifyBy(cssClass: index == 1 ? .activeLink : .inactiveLink)
             Divider()
                 .backgroundColor(.DarkNavBarDividerColor)
                 .size(height: .pixel(1))
