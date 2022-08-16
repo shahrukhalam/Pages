@@ -28,7 +28,12 @@ public struct MarkdownStyle: CSSStyle {
             .padding(top: .pixel(10), bottom: .pixel(10))
             .font(size: .percentage(125))
             .lineHeight(.percentage(140))
-        let allStyles = [containerStyle, h1Style, h2Style, pStyle].map { $0.element }
+        let blockquoteStyle = ClassStyle(forClass: .markdown, withTag: .enclosing(.blockquote))
+            .padding(left: .pixel(20))
+            .border(width: .pixel(1))
+            .borderLeft()
+            .border(color: .DarkNavBarDividerColor)
+        let allStyles = [containerStyle, h1Style, h2Style, pStyle, blockquoteStyle].map { $0.element }
         self.element = allStyles
             .joined(separator: "\n")
     }
