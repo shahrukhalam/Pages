@@ -1,3 +1,3 @@
 # Pages
 
-Package for the [website](https://shahrukhalam.github.io/Pages) for iOS Development by Shahrukh Alam
+Package for the iOS Development [website](https://shahrukhalam.github.io/Pages) by Shahrukh Alam
