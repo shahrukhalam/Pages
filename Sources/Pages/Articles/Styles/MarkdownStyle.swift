@@ -30,7 +30,7 @@ public struct MarkdownStyle: CSSStyle {
             .lineHeight(.percentage(140))
         let blockquoteStyle = ClassStyle(forClass: .markdown, withTag: .enclosing(.blockquote))
             .padding(left: .pixel(20))
-            .border(width: .pixel(1))
+            .border(width: .pixel(2))
             .borderLeft()
             .border(color: .DarkNavBarDividerColor)
         let allStyles = [containerStyle, h1Style, h2Style, pStyle, blockquoteStyle].map { $0.element }

@@ -18,7 +18,7 @@ line-height: 140%;
 }
 .markdown blockquote {
 padding: 0px 0px 0px 20px;
-border-width: 1px;
+border-width: 2px;
 border-left-style: solid;
 border-color: rgba(76, 76, 76, 1.0);
 }
