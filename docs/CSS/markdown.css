@@ -8,17 +8,33 @@ font-size: 300%;
 text-align: center;
 }
 .markdown h2 {
-padding: 10px 0px 10px 0px;
+padding: 20px 0px 10px 0px;
 font-size: 250%;
 }
-.markdown p {
+.markdown h3 {
 padding: 10px 0px 10px 0px;
+font-size: 200%;
+}
+.markdown p {
+padding: 10px 0px 5px 0px;
 font-size: 125%;
-line-height: 140%;
+line-height: 160%;
+}
+.markdown li {
+padding: 0px 0px 5px 0px;
+font-size: 125%;
+line-height: 160%;
 }
 .markdown blockquote {
 padding: 0px 0px 0px 20px;
 border-width: 2px;
 border-left-style: solid;
 border-color: rgba(76, 76, 76, 1.0);
+}
+.markdown a {
+color: rgba(41, 151, 255, 1.0);
+text-decoration: none;
+}
+.markdown a:hover {
+text-decoration: underline;
 }

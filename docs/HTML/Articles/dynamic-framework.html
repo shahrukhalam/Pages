@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="author" content="Shahrukh Alam">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Pages/CSS/kickoff.css">
-    <link rel="stylesheet" href="/Pages/CSS/nav.css">
-    <link rel="stylesheet" href="/Pages/CSS/body.css">
-    <link rel="stylesheet" href="/Pages/CSS/common.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="/Pages/CSS/font.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/font-small.css">
-    <link rel="stylesheet" href="/Pages/CSS/article.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="/Pages/CSS/markdown.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/markdown-small.css">
-    <link rel="stylesheet" href="/Pages/CSS/source.css">
+    <link rel="stylesheet" href="../../CSS/kickoff.css">
+    <link rel="stylesheet" href="../../CSS/nav.css">
+    <link rel="stylesheet" href="../../CSS/body.css">
+    <link rel="stylesheet" href="../../CSS/common.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="../../CSS/font.css">
+    <link rel="stylesheet" media="screen and (max-width: 900px)" href="../../CSS/font-small.css">
+    <link rel="stylesheet" href="../../CSS/article.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="../../CSS/markdown.css">
+    <link rel="stylesheet" media="screen and (max-width: 900px)" href="../../CSS/markdown-small.css">
+    <link rel="stylesheet" href="../../CSS/source.css">
 </head>
 <body>
         <div class="indexNav">
-            <a href="/Pages/index.html" class="inactiveLink">
+            <a href="index.html" class="inactiveLink">
             Home
             </a>
-            <a href="/Pages/HTML/Articles/dynamic-framework.html" class="activeLink">
+            <a href="HTML/Articles/dynamic-framework.html" class="activeLink">
             Articles
             </a>
             <hr style="background-color: rgba(76, 76, 76, 1.0);height: 1px;border-width: 0px;">
@@ -32,6 +32,7 @@
                     <h1>How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)</h1>
                     <p>Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.</p>
                     <img src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert" style="width: 100%;margin: 10px 0px;">
+                    <p>This Article will be in the form of a questionnaire about Dynamic Library in iOS between <strong>Jesse Pinkman</strong> &amp; <strong>Heisenberg</strong>, fictional characters from the epic TV Series <a href="https://en.wikipedia.org/wiki/Breaking_Bad">Breaking Bad</a>. Those who haven't watched it, Walter White (aka Heisenberg) is like a mentor to Jesse Pinkman, but for all the unconventional things.</p>
                     <blockquote>
                     <p><strong>Jesse:</strong> Yo, knock knock!</p>
                     </blockquote>
@@ -62,6 +63,67 @@
                     <blockquote>
                     <p><strong>Heisenberg:</strong> The key differences between Static &amp; Dynamic Libraries (Dylib) are:</p>
                     </blockquote>
+                    <h2>Linking</h2>
+                    <h3>Static</h3>
+                    <ul>
+                    <li>When an app is linked with a static library, the library code that the app uses is directly copied to the generated App Executable by <a href="https://en.wikipedia.org/wiki/Linker_(computing)">Static Linker</a>.</li>
+                    </ul>
+                    <img src="../../Images/Articles/Frameworks/Dynamic/static-linking.png" alt="Flow diagram of static linking" style="width: 100%;margin: 10px 0px;">
+                    <h3>Dynamic</h3>
+                    <ul>
+                    <li>When an app is using a dynamic library, only the References (rather Names to be precise) of the library is placed in the App Executable by Static Linker.</li>
+                    <li>Actual linking takes place at launch time or at run time by <a href="https://en.wikipedia.org/wiki/Dynamic_linker">Dynamic Linker</a>, when both app executable and dynamic library are placed in the memory.</li>
+                    </ul>
+                    <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking.png" alt="Flow diagram of dynamic linking" style="width: 100%;margin: 10px 0px;">
+                    <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking-explained.png" alt="Flow diagram explaining dynamic linking" style="width: 100%;margin: 10px 0px;">
+                    <h2>Launch Times and Memory Footprints</h2>
+                    <h3>Static</h3>
+                    <ul>
+                    <li>As the library code gets copied directly to the App Executable, linking many static libraries into an app produces large app executable file.</li>
+                    <li>Applications with large executables suffer from slow launch times and large memory footprints.</li>
+                    </ul>
+                    <h3>Dynamic (aka Dynamically Linked Libraries or DLL)</h3>
+                    <ul>
+                    <li>It’s code is loaded (and linked) into an app’s address space when it’s actually needed, either at launch time or at run time.</li>
+                    <li>Run time Linking offers faster launch times &amp; less memory footprints.</li>
+                    </ul>
+                    <h2>Sharing</h2>
+                    <h3>Static</h3>
+                    <ul>
+                    <li>Let’s say some improvements were added in the version 1.0.1 of Static Library from 1.0.0</li>
+                    <li>Let’s say latest app version is 1.0 which will have the code of Static Library version 1.0.0</li>
+                    <li>Now, in order to gain access to the improved functionality, the app developers must recompile &amp; relink the object files of the app with the new version 1.0.1 of the library, also they would have to release a new version (say 1.1) of the app.</li>
+                    <li>Also the app users need to update their app with the latest version 1.1</li>
+                    <li>So, to keep an app updated with the latest functionalities, some work is needed from both the app developers &amp; the end users.</li>
+                    </ul>
+                    <h3>Dynamic (aka Dynamic Shared Libraries or DSL):</h3>
+                    <ul>
+                    <li>Several programs(Apps) use a single shared copy of an executable dynamic library module.
+                    For example, a single copy of AppKit (UIKit, but for Mac OS) resides on the System &amp; all the Apps point to the same.</li>
+                    <li>This significantly reduces the size of the app executable, saving memory and disk space.</li>
+                    <li>App load time will be further reduced if the shared library code is already present in memory.</li>
+                    <li>Programs can benefit from improvements to the dynamic libraries they use automatically without requiring app developers to <strong>recompile</strong> the apps.
+                    This is how apps that use Cocoa technologies benefit from improvements to Mac OS as all system libraries in Mac OS are dynamic.</li>
+                    <li>When I say <em>recompile</em> (from the previous point), I mean let’s say we have an App version 1.0 using AppKit dynamic library version 1.0.0
+                    Our App executable keeps a reference (just the Name) to the AppKit.
+                    Now, we got an OS update &amp; AppKit version is bumped to 1.0.1 on the File System.</li>
+                    </ul>
+                    <p><a href="https://en.wikipedia.org/wiki/Dynamic_linker">Dynamic Loader</a> sees our App executable &amp; finds the name AppKit to load. As long as AppKit is present (and is compatible, which it will be in most cases) in the File System, Dynamic Loader will be able to load it, the version of AppKit doesn’t matter. We don’t need to do anything extra &amp; we get the new version 1.0.1 for free.</p>
+                    <img src="../../Images/Articles/Frameworks/Dynamic/static-vs-dynamic.png" alt="Flow diagram explaining static vs dynamic load" style="width: 100%;margin: 10px 0px;">
+                    <h2>Run time Speed</h2>
+                    <p>Programs that use dynamic libraries are slower at run time than those using statically-linked libraries, especially when app is trying to link the dynamic library module at run time.</p>
+                    <p>This is a fair trade off for faster launch times &amp; less memory footprints.</p>
+                    <h2>Compatibility</h2>
+                    <h3>Static</h3>
+                    <ul>
+                    <li>In statically-linked programs, all code is contained in a single executable module. Therefore, they never run into compatibility issues.</li>
+                    </ul>
+                    <h3>Dynamic</h3>
+                    <ul>
+                    <li>One issue that developers must keep in mind when developing dynamic libraries is maintaining compatibility with client apps as a library is updated.<br />
+                    Let’s say Mac Apps <em>AdobePhotoshop</em> version 1.0 &amp; <em>AdobeIllustrator</em> version 1.0 both use the shared dynamic library <em>AdobeCore</em> version 1.0.0<br />
+                    Now, Adobe developers decide to release a new version 1.0.1 for AdobeCore alone.</li>
+                    </ul>
                 </div>
             </div>
         </div>
