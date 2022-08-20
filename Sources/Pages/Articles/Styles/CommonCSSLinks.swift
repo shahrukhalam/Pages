@@ -9,7 +9,7 @@ import HTMLDSL
 
 func commonCSSLinks(root: String) -> some HTMLContentView {
     AnyView([
-        CSSLink(favicon: root + "Images/Index/swift.png"),
+        CSSLink(favicon: root + "Images/Index/spinning-top.png"),
         CSSLink(path: root + "CSS/kickoff.css"),
         CSSLink(path: root + "CSS/nav.css"),
         CSSLink(path: root + "CSS/body.css"),
