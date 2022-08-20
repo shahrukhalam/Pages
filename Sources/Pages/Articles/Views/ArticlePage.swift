@@ -12,9 +12,12 @@ public func articlePage(article: Article) -> some View {
         HTML {
             Head {
                 Title("Dynamic Library in iOS")
-                Meta(.characterSet(.utf8))
-                Meta(.name(.author, content: "Shahrukh Alam"))
-                Meta(.viewport(width: .deviceWidth, scale: .full))
+                commonMeta(description: "Short article on Static vs Dynamic Libraries in iOS",
+                           keywords: ["Static Library", "Dynamic Library", "Static Framework", "Dynamic Framework", "Static vs Dynamic Library", "Static vs Dynamic Framework", "Static vs Dynamic Library in iOS", "Static vs Dynamic Framework in iOS"])
+                socialMeta(title: "How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)",
+                           description: "Short article on Static vs Dynamic Libraries in iOS",
+                           image: .baseURL + ImageDescription.frameworks.url,
+                           url: .baseURL)
                 commonCSSLinks(root: .rootFromArticles)
             }
             

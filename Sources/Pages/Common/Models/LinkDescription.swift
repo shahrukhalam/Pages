@@ -23,4 +23,5 @@ extension String {
     static var indexLink: Self { root + "index.html" }
     static private var articlesHTMLFolder: Self { root + "HTML/Articles/" }
     static var dynmaicFrameworksLink: Self { .articlesHTMLFolder + "dynamic-framework.html" }
+    static var baseURL: Self = "https://shahrukhalam.github.io/Pages/"
 }

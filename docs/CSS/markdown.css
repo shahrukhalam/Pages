@@ -24,7 +24,7 @@ line-height: 160%;
 padding: 0px 0px 5px 0px;
 font-size: 125%;
 line-height: 160%;
-list-style-image: url("../Images/Articles/spinning-top.tiff");
+list-style-image: url("/Pages/Images/Articles/spinning-top.tiff");
 }
 .markdown blockquote {
 margin: 20px 20px 20px 20px;

@@ -12,9 +12,12 @@ public func indexPage() -> some View {
         HTML {
             Head {
                 Title("Learn iOS Development")
-                Meta(.characterSet(.utf8))
-                Meta(.name(.author, content: "Shahrukh Alam"))
-                Meta(.viewport(width: .deviceWidth, scale: .full))
+                commonMeta(description: "Short articles and tutorials on Swift, SwiftUI and iOS Development",
+                           keywords: ["Swift", "SwiftUI", "iOS Development"])
+                socialMeta(title: "Learn iOS Development",
+                           description: "Short articles and tutorials on Swift, SwiftUI and iOS Development",
+                           image: .baseURL + ImageDescription.swiftUI.url,
+                           url: .baseURL)
                 commonCSSLinks(root: .empty)
                 indexCSSLinks
             }

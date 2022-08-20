@@ -23,6 +23,6 @@ extension ImageDescription {
     
     static let frameworks: Self = .init(
         url: "Images/Index/xcframework.png",
-        description: "Wonder Woman blocking lightning with sword"
+        description: "Diagram of XCFramework spporting multiple platforms"
     )
 }
