@@ -19,10 +19,15 @@ func commonMeta(description: String, keywords: [String]) -> some HTMLHeadContent
 
 func socialMeta(title: String, description: String, image: String, url: String) -> some HTMLHeadContentView {
     AnyView([
-        Meta(.name(.twitter, content: title)),
+        Meta(.property(.type, content: "website")),
+        Meta(.twitter(.card, content: "summary")),
         Meta(.property(.title, content: title)),
+        Meta(.twitter(.title, content: title)),
         Meta(.property(.description, content: description)),
+        Meta(.twitter(.description, content: description)),
         Meta(.property(.image, content: image)),
-        Meta(.property(.url, content: url))
+        Meta(.twitter(.image, content: image)),
+        Meta(.property(.url, content: url)),
+        Meta(.twitter(.url, content: url)),
     ])
 }
