@@ -15,7 +15,7 @@ public func articlePage(article: Article) -> some View {
                 Meta(.characterSet(.utf8))
                 Meta(.name(.author, content: "Shahrukh Alam"))
                 Meta(.viewport(width: .deviceWidth, scale: .full))
-                commonCSSLinks(root: .cssRootFromArticles)
+                commonCSSLinks(root: .cssRoot)
             }
             
             Body {
