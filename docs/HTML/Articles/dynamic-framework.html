@@ -31,51 +31,51 @@
                 <div>
                     <h1>How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)</h1>
                     <p>Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.</p>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert" style="width: 100%;margin: 10px 0px;">
+                    <img src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert" style="width: 100%;margin: 20px 0px;">
                     <p>This Article will be in the form of a questionnaire about Dynamic Library in iOS between <strong>Jesse Pinkman</strong> &amp; <strong>Heisenberg</strong>, fictional characters from the epic TV Series <a href="https://en.wikipedia.org/wiki/Breaking_Bad">Breaking Bad</a>. Those who haven't watched it, Walter White (aka Heisenberg) is like a mentor to Jesse Pinkman, but for all the unconventional things.</p>
                     <blockquote>
-                    <p><strong>Jesse:</strong> Yo, knock knock!</p>
+                    <p><em><strong>Jesse:</strong></em> <em>Yo, knock knock!</em></p>
                     </blockquote>
                     <blockquote>
-                    <p><strong>Heisenberg:</strong> Who is there?</p>
+                    <p><em><strong>Heisenberg:</strong></em> <em>Who is there?</em></p>
                     </blockquote>
                     <blockquote>
-                    <p><strong>Jesse:</strong> It’s You, Bi*ch 🤣 (if you remember “I am the one who knocks”)</p>
+                    <p><em><strong>Jesse:</strong></em> <em>It’s You, Bi</em>ch 🤣 (if you remember “I am the one who knocks”)*</p>
                     </blockquote>
                     <blockquote>
-                    <p><strong>Heisenberg:</strong> Haha, Say my Name! 😎</p>
+                    <p><strong>Heisenberg:</strong> <em>Haha, Say my Name! 😎</em></p>
                     </blockquote>
                     <blockquote>
-                    <p><strong>Jesse:</strong> Yo, just kidding. Should we start?</p>
+                    <p><em><strong>Jesse:</strong></em> <em>Yo, just kidding. Should we start?</em></p>
                     </blockquote>
                     <blockquote>
-                    <p><strong>Heisenberg:</strong> Yeah, we should. I don’t have much time left anyway 🤢</p>
+                    <p><em><strong>Heisenberg:</strong></em> <em>Yeah, we should. I don’t have much time left anyway 🤢</em></p>
                     </blockquote>
                     <blockquote>
-                    <p><strong>Jesse:</strong> What’s a Library, let alone Dynamic?</p>
+                    <p><em><strong>Jesse:</strong></em> <em>What’s a Library, let alone Dynamic?</em></p>
                     </blockquote>
                     <blockquote>
-                    <p><strong>Heisenberg:</strong> Please check out Static Library in iOS about Library &amp; Static Linking before you continue.</p>
+                    <p><em><strong>Heisenberg:</strong></em> <em>Please check out Static Library in iOS about Library &amp; Static Linking before you continue.</em></p>
                     </blockquote>
                     <blockquote>
-                    <p><strong>Jesse:</strong> Okay, got it. Now, How Dynamic Library is different from it’s Static Counterpart?</p>
+                    <p><em><strong>Jesse:</strong></em> <em>Okay, got it. Now, How Dynamic Library is different from it’s Static Counterpart?</em></p>
                     </blockquote>
                     <blockquote>
-                    <p><strong>Heisenberg:</strong> The key differences between Static &amp; Dynamic Libraries (Dylib) are:</p>
+                    <p><em><strong>Heisenberg:</strong></em> <em>The key differences between Static &amp; Dynamic Libraries (Dylib) are:</em></p>
                     </blockquote>
                     <h2>Linking</h2>
                     <h3>Static</h3>
                     <ul>
                     <li>When an app is linked with a static library, the library code that the app uses is directly copied to the generated App Executable by <a href="https://en.wikipedia.org/wiki/Linker_(computing)">Static Linker</a>.</li>
                     </ul>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/static-linking.png" alt="Flow diagram of static linking" style="width: 100%;margin: 10px 0px;">
+                    <img src="../../Images/Articles/Frameworks/Dynamic/static-linking.png" alt="Flow diagram of static linking" style="width: 100%;margin: 20px 0px;">
                     <h3>Dynamic</h3>
                     <ul>
                     <li>When an app is using a dynamic library, only the References (rather Names to be precise) of the library is placed in the App Executable by Static Linker.</li>
                     <li>Actual linking takes place at launch time or at run time by <a href="https://en.wikipedia.org/wiki/Dynamic_linker">Dynamic Linker</a>, when both app executable and dynamic library are placed in the memory.</li>
                     </ul>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking.png" alt="Flow diagram of dynamic linking" style="width: 100%;margin: 10px 0px;">
-                    <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking-explained.png" alt="Flow diagram explaining dynamic linking" style="width: 100%;margin: 10px 0px;">
+                    <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking.png" alt="Flow diagram of dynamic linking" style="width: 100%;margin: 20px 0px;">
+                    <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking-explained.png" alt="Flow diagram explaining dynamic linking" style="width: 100%;margin: 20px 0px;">
                     <h2>Launch Times and Memory Footprints</h2>
                     <h3>Static</h3>
                     <ul>
@@ -109,7 +109,7 @@
                     Now, we got an OS update &amp; AppKit version is bumped to 1.0.1 on the File System.</li>
                     </ul>
                     <p><a href="https://en.wikipedia.org/wiki/Dynamic_linker">Dynamic Loader</a> sees our App executable &amp; finds the name AppKit to load. As long as AppKit is present (and is compatible, which it will be in most cases) in the File System, Dynamic Loader will be able to load it, the version of AppKit doesn’t matter. We don’t need to do anything extra &amp; we get the new version 1.0.1 for free.</p>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/static-vs-dynamic.png" alt="Flow diagram explaining static vs dynamic load" style="width: 100%;margin: 10px 0px;">
+                    <img src="../../Images/Articles/Frameworks/Dynamic/static-vs-dynamic.png" alt="Flow diagram explaining static vs dynamic load" style="width: 100%;margin: 20px 0px;">
                     <h2>Run time Speed</h2>
                     <p>Programs that use dynamic libraries are slower at run time than those using statically-linked libraries, especially when app is trying to link the dynamic library module at run time.</p>
                     <p>This is a fair trade off for faster launch times &amp; less memory footprints.</p>
@@ -122,8 +122,61 @@
                     <ul>
                     <li>One issue that developers must keep in mind when developing dynamic libraries is maintaining compatibility with client apps as a library is updated.<br />
                     Let’s say Mac Apps <em>AdobePhotoshop</em> version 1.0 &amp; <em>AdobeIllustrator</em> version 1.0 both use the shared dynamic library <em>AdobeCore</em> version 1.0.0<br />
-                    Now, Adobe developers decide to release a new version 1.0.1 for AdobeCore alone.</li>
+                    Now, Adobe developers decide to release a new version 1.0.1 for <em>AdobeCore</em> alone.<br />
+                    They have to do a backward compatibility check for <em>AdobePhotoshop</em> 1.0 &amp; <em>AdobeIllustrator</em> 1.0 as both the apps will now be pointing to <em>AdobeCore</em> 1.0.1, if any compatibility issue arises Dynamic Loader will terminate the process (app) at launch time or run time.</li>
+                    <li>Because a library can be updated without the knowledge of the client-app’s developer, the app must be able to use the new version of the library without changes to its code. To that end, the library’s API should not change.</li>
+                    <li>However, there are times when improvements require API changes. In that case, the previous version of the library must remain in the user’s computer for the client app to run properly.<br />
+                    Continuing the previous example, Adobe developers can release <em>AdobeCore</em> 1.0.1 keeping <em>AdobeCore</em> 1.0.0 also in the System, so that <em>AdobePhotoshop</em> 1.0 &amp; <em>AdobeIllustrator</em> 1.0 can still use <em>AdobeCore</em> 1.0.0 without crashing &amp; latest <em>AdobePhotoshop</em> (say 1.1) &amp; <em>AdobeIllustrator</em> (say 1.1) can point to <em>AdobeCore</em> 1.0.1 benefitting from the improvements.</li>
+                    <li>A new compiler release may change a library, applications might have to be reworked to be made compatible with the new version of the library.</li>
                     </ul>
+                    <blockquote>
+                    <p><em><strong>Jesse:</strong></em> <em>In the previous section, it was mentioned that standard locations for dynamic library are ~/lib, /usr/local/lib &amp; /usr/lib. Show me 😎</em></p>
+                    </blockquote>
+                    <blockquote>
+                    <p><em><strong>Heisenberg:</strong></em> <em>Okay, I will show few dylibs location on my system, it might be different on your file system.</em></p>
+                    </blockquote>
+                    <ol>
+                    <li>Core Swift libraries, used by our Swift Apps are in <em>Library</em></li>
+                    </ol>
+                    <img src="../../Images/Articles/Frameworks/Dynamic/core-swift-dylib.png" alt="Swift Dynamic libaries in Finder" style="width: 100%;margin: 20px 0px;">
+                    <ol start="2">
+                    <li>Helper Swift libraries, used by <em>swiftc</em> (Swift Compiler) &amp; Xcode are in <em>User Library</em></li>
+                    </ol>
+                    <img src="../../Images/Articles/Frameworks/Dynamic/helper-swift-lib.png" alt="Swift helper libaries in Finder" style="width: 100%;margin: 20px 0px;">
+                    <ol start="3">
+                    <li>Locations of all the dylibs used by your App<br />
+                    You can use <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/LoggingDynamicLoaderEvents.html">Logging Dynamic Loader Events</a> Environment Variables on <em>Xcode -&gt; Active Scheme -&gt; Edit Scheme</em> like this:</li>
+                    </ol>
+                    <img src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries.png" alt="Xcode Dylib print libraries" style="width: 100%;margin: 20px 0px;">
+                    <p>It will give an output like this for an empty single view iOS App on Debugger console:</p>
+                    <img src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries-output.png" alt="Xcode Dylib print libraries output" style="width: 100%;margin: 20px 0px;">
+                    <blockquote>
+                    <p><em><strong>Jesse:</strong></em> <em>In the previous section, it was mentioned that Dynamic Libraries are loaded at launch time or run time. What’s the difference between them?</em></p>
+                    </blockquote>
+                    <blockquote>
+                    <p><em><strong>Heisenberg:</strong></em> <em>I appreciate how you are trying to be a good learner 🤪</em></p>
+                    </blockquote>
+                    <h3>Launch Time</h3>
+                    <p>When you tap on that App Icon in your iPhone, app binary gets loaded onto memory along with the dynamic libraries required only for showing the launch screen &amp; then the first screen. It’s the time between the <em>main</em> function call of the executable &amp; the <em>return true</em> from <em>didFinishLaunchingWithOptions</em> of the AppDelegate. App state transitions from <em>terminated</em> to <em>active</em> during this time.</p>
+                    <h3>Run Time</h3>
+                    <p>It’s the time when the app is actually running &amp; user is interacting with it, dynamic libraries can also be loaded during this time based on the need of a particular module. It’s post Launch Time, the time between the <em>return true</em> from <em>didFinishLaunchingWithOptions</em> &amp; the <em>applicationWillTerminate</em> of the AppDelegate. App state transitions from <em>active</em> to <em>terminated</em> post this time.</p>
+                    <blockquote>
+                    <p><em><strong>Jesse:</strong></em> <em>Okay, can we now create a Dynamic Library for iOS?</em></p>
+                    </blockquote>
+                    <blockquote>
+                    <p><em><strong>Heisenberg:</strong></em> <em>Actually, true Dynamic Libraries are not supported in iOS 🤣</em></p>
+                    </blockquote>
+                    <blockquote>
+                    <p><em><strong>Jesse:</strong></em> <em>Then, why the f</em>ck were you telling me all this, and what is this true Dynamic Library now?*</p>
+                    </blockquote>
+                    <blockquote>
+                    <p><em><strong>Heisenberg:</strong></em> <em>I understand that it’s frustrating, but you can’t make <a href="https://en.wikipedia.org/wiki/Methamphetamine">Meth</a> without knowing little bit of <a href="https://en.wikipedia.org/wiki/Periodic_table">Periodic table</a> stuff.</em></p>
+                    </blockquote>
+                    <p>And we will meet with rest of your curiosity in the next cracking session (Part 2). I know that I am leaving you on a cliffhanger &amp; it’s not fair, but neither is Life 😜</p>
+                    <p>That’s enough for now, until next time…</p>
+                    <p>Happy Coding &amp; Sharing 😍<br />
+                    Cheers 🍺<br />
+                    <a href="https://www.linkedin.com/in/alamshahrukh/">Shahrukh Alam</a></p>
                 </div>
             </div>
         </div>

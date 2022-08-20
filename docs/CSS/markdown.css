@@ -16,7 +16,7 @@ padding: 10px 0px 10px 0px;
 font-size: 200%;
 }
 .markdown p {
-padding: 10px 0px 5px 0px;
+padding: 10px 0px 10px 0px;
 font-size: 125%;
 line-height: 160%;
 }
@@ -24,8 +24,10 @@ line-height: 160%;
 padding: 0px 0px 5px 0px;
 font-size: 125%;
 line-height: 160%;
+list-style-image: url("../Images/Articles/spinning-top.tiff");
 }
 .markdown blockquote {
+margin: 20px 20px 20px 20px;
 padding: 0px 0px 0px 20px;
 border-width: 2px;
 border-left-style: solid;
