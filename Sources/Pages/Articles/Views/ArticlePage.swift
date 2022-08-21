@@ -7,7 +7,9 @@
 
 import HTMLDSL
 
-public func articlePage(article: Article, root: String = .rootFromArticles) -> some View {
+public func articlePage(article: Article,
+                        root: String = .rootFromArticles,
+                        isTesting: Bool = false) -> some View {
     Document {
         HTML {
             Head {
@@ -19,7 +21,7 @@ public func articlePage(article: Article, root: String = .rootFromArticles) -> s
                            image: .baseURL + "Images/Articles/Frameworks/Dynamic/xcframework.png",
                            url: .baseURL)
                 commonCSSLinks(root: root)
-                AnalyticsScript()
+                AnyView(isTesting ? [] : [AnalyticsScript()])
             }
             
             Body {
