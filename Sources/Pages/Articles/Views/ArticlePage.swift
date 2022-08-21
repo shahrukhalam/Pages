@@ -7,7 +7,7 @@
 
 import HTMLDSL
 
-public func articlePage(article: Article) -> some View {
+public func articlePage(article: Article, root: String = .rootFromArticles) -> some View {
     Document {
         HTML {
             Head {
@@ -18,7 +18,7 @@ public func articlePage(article: Article) -> some View {
                            description: "Short article on Static vs Dynamic Libraries in iOS",
                            image: .baseURL + "Images/Articles/Frameworks/Dynamic/xcframework.png",
                            url: .baseURL)
-                commonCSSLinks(root: .rootFromArticles)
+                commonCSSLinks(root: root)
                 AnalyticsScript()
             }
             

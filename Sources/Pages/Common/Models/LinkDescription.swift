@@ -14,7 +14,7 @@ extension LinkDescription {
     static let dynamicFramework: Self = .init(url: .dynmaicFrameworksLink, text: "Read")
 }
 
-extension String {
+public extension String {
     static var empty: Self { "" }
     /// Replace with `empty` in case of local
     static var root: Self = "/Pages/"

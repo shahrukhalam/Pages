@@ -6,7 +6,6 @@ let package = Package(
     name: "Pages",
     platforms: [.macOS(.v12)],
     products: [
-        .executable(name: "PagesCLI", targets: ["PagesCLI"]),
         .library(name: "Pages", targets: ["Pages"])
     ],
     dependencies: [
