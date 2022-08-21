@@ -19,6 +19,7 @@ public func articlePage(article: Article) -> some View {
                            image: .baseURL + "Images/Articles/Frameworks/Dynamic/xcframework.png",
                            url: .baseURL)
                 commonCSSLinks(root: .rootFromArticles)
+                AnalyticsScript()
             }
             
             Body {
