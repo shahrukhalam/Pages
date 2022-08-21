@@ -31,6 +31,15 @@ public struct MarkdownStyle: CSSStyle {
             .padding(top: .pixel(10), bottom: .pixel(10))
             .font(size: .percentage(125))
             .lineHeight(.percentage(160))
+        let introStyle = ClassStyle(forClass: .markdown, withClass: .intro)
+            .padding(top: .pixel(10), bottom: .pixel(10))
+            .font(size: .percentage(125))
+            .lineHeight(.percentage(160))
+            .foregroundColor(.DarkActiveNavBarItem)
+        let imageCreditsStyle = ClassStyle(forClass: .markdown, withClass: .imageCredits)
+            .margin(top: .pixel(-20), bottom: .pixel(10))
+            .font(size: .percentage(100))
+            .foregroundColor(.DarkActiveNavBarItem)
         let liStyle = ClassStyle(forClass: .markdown, withTag: .enclosing(.list))
             .padding(bottom: .pixel(5))
             .font(size: .percentage(125))
@@ -47,7 +56,7 @@ public struct MarkdownStyle: CSSStyle {
             .textDecoration(.none)
         let linkHoverStyle = ClassStyle(.markdown, tag: .enclosing(.link), cssTag: .hover)
             .textDecoration(.underline)
-        let allStyles = [containerStyle, h1Style, h2Style, h3Style, pStyle, liStyle, blockquoteStyle, linkStyle, linkHoverStyle].map { $0.element }
+        let allStyles = [containerStyle, h1Style, h2Style, h3Style, pStyle, introStyle, imageCreditsStyle, liStyle, blockquoteStyle, linkStyle, linkHoverStyle].map { $0.element }
         self.element = allStyles
             .joined(separator: "\n")
     }

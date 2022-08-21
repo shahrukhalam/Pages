@@ -20,6 +20,17 @@ padding: 10px 0px 10px 0px;
 font-size: 125%;
 line-height: 160%;
 }
+.markdown .intro {
+padding: 10px 0px 10px 0px;
+font-size: 125%;
+line-height: 160%;
+color: rgba(139, 139, 139, 1.0);
+}
+.markdown .imageCredits {
+margin: -20px 0px 10px 0px;
+font-size: 100%;
+color: rgba(139, 139, 139, 1.0);
+}
 .markdown li {
 padding: 0px 0px 5px 0px;
 font-size: 125%;

@@ -1,8 +1,9 @@
 # How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)
 
-Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.
+<p class="intro">Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.</p>
 
 <img src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert" style="width: 100%;margin: 20px 0px;">
+<p class="imageCredits centerText">Breaking Bad Meth Van, Courtesy: <a href="https://www.artstation.com/artwork/XBmkGw">Artstation</a></p>
 
 This Article will be in the form of a questionnaire about Dynamic Library in iOS between **Jesse Pinkman** & **Heisenberg**, fictional characters from the epic TV Series [Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad). Those who haven't watched it, Walter White (aka Heisenberg) is like a mentor to Jesse Pinkman, but for all the unconventional things.
 
@@ -31,12 +32,14 @@ This Article will be in the form of a questionnaire about Dynamic Library in iOS
 - When an app is linked with a static library, the library code that the app uses is directly copied to the generated App Executable by [Static Linker](https://en.wikipedia.org/wiki/Linker_(computing)).
 
 <img src="../../Images/Articles/Frameworks/Dynamic/static-linking.png" alt="Flow diagram of static linking" style="width: 100%;margin: 20px 0px;">
+<p class="imageCredits centerText">App using static libraries, Courtesy: <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html">Apple</a></p>
 
 ### Dynamic
 - When an app is using a dynamic library, only the References (rather Names to be precise) of the library is placed in the App Executable by Static Linker.
 - Actual linking takes place at launch time or at run time by [Dynamic Linker](https://en.wikipedia.org/wiki/Dynamic_linker), when both app executable and dynamic library are placed in the memory.
 
 <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking.png" alt="Flow diagram of dynamic linking" style="width: 100%;margin: 20px 0px;">
+<p class="imageCredits centerText">App using dynamic libraries, Courtesy: <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html">Apple</a></p>
 
 <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking-explained.png" alt="Flow diagram explaining dynamic linking" style="width: 100%;margin: 20px 0px;">
 
@@ -133,6 +136,9 @@ And we will meet with rest of your curiosity in the next cracking session (Part 
 
 That’s enough for now, until next time…
 
+Thanks for reading 🚀  
+if you liked it, please share it with your friends and colleagues 🙏
+
 Happy Coding & Sharing 😍  
 Cheers 🍺  
-[Shahrukh Alam](https://www.linkedin.com/in/alamshahrukh/)
+**SA**

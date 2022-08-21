@@ -43,8 +43,9 @@
             <div class="markdown">
                 <div>
                     <h1>How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)</h1>
-                    <p>Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.</p>
+                    <p class="intro">Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.</p>
                     <img src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert" style="width: 100%;margin: 20px 0px;">
+                    <p class="imageCredits centerText">Breaking Bad Meth Van, Courtesy: <a href="https://www.artstation.com/artwork/XBmkGw">Artstation</a></p>
                     <p>This Article will be in the form of a questionnaire about Dynamic Library in iOS between <strong>Jesse Pinkman</strong> &amp; <strong>Heisenberg</strong>, fictional characters from the epic TV Series <a href="https://en.wikipedia.org/wiki/Breaking_Bad">Breaking Bad</a>. Those who haven't watched it, Walter White (aka Heisenberg) is like a mentor to Jesse Pinkman, but for all the unconventional things.</p>
                     <blockquote>
                     <p><em><strong>Jesse:</strong></em> <em>Yo, knock knock!</em></p>
@@ -82,12 +83,14 @@
                     <li>When an app is linked with a static library, the library code that the app uses is directly copied to the generated App Executable by <a href="https://en.wikipedia.org/wiki/Linker_(computing)">Static Linker</a>.</li>
                     </ul>
                     <img src="../../Images/Articles/Frameworks/Dynamic/static-linking.png" alt="Flow diagram of static linking" style="width: 100%;margin: 20px 0px;">
+                    <p class="imageCredits centerText">App using static libraries, Courtesy: <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html">Apple</a></p>
                     <h3>Dynamic</h3>
                     <ul>
                     <li>When an app is using a dynamic library, only the References (rather Names to be precise) of the library is placed in the App Executable by Static Linker.</li>
                     <li>Actual linking takes place at launch time or at run time by <a href="https://en.wikipedia.org/wiki/Dynamic_linker">Dynamic Linker</a>, when both app executable and dynamic library are placed in the memory.</li>
                     </ul>
                     <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking.png" alt="Flow diagram of dynamic linking" style="width: 100%;margin: 20px 0px;">
+                    <p class="imageCredits centerText">App using dynamic libraries, Courtesy: <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html">Apple</a></p>
                     <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking-explained.png" alt="Flow diagram explaining dynamic linking" style="width: 100%;margin: 20px 0px;">
                     <h2>Launch Times and Memory Footprints</h2>
                     <h3>Static</h3>
@@ -187,9 +190,11 @@
                     </blockquote>
                     <p>And we will meet with rest of your curiosity in the next cracking session (Part 2). I know that I am leaving you on a cliffhanger &amp; it’s not fair, but neither is Life 😜</p>
                     <p>That’s enough for now, until next time…</p>
+                    <p>Thanks for reading 🚀<br />
+                    if you liked it, please share it with your friends and colleagues 🙏</p>
                     <p>Happy Coding &amp; Sharing 😍<br />
                     Cheers 🍺<br />
-                    <a href="https://www.linkedin.com/in/alamshahrukh/">Shahrukh Alam</a></p>
+                    <strong>SA</strong></p>
                 </div>
             </div>
         </div>
