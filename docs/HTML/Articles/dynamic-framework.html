@@ -44,7 +44,7 @@
                 <div>
                     <h1>How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)</h1>
                     <p class="intro">Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.</p>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert" style="width: 100%;margin: 20px 0px;">
+                    <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert">
                     <p class="imageCredits centerText">Breaking Bad Meth Van, Courtesy: <a href="https://www.artstation.com/artwork/XBmkGw">Artstation</a></p>
                     <p>This Article will be in the form of a questionnaire about Dynamic Library in iOS between <strong>Jesse Pinkman</strong> &amp; <strong>Heisenberg</strong>, fictional characters from the epic TV Series <a href="https://en.wikipedia.org/wiki/Breaking_Bad">Breaking Bad</a>. Those who haven't watched it, Walter White (aka Heisenberg) is like a mentor to Jesse Pinkman, but for all the unconventional things.</p>
                     <blockquote>
@@ -82,16 +82,17 @@
                     <ul>
                     <li>When an app is linked with a static library, the library code that the app uses is directly copied to the generated App Executable by <a href="https://en.wikipedia.org/wiki/Linker_(computing)">Static Linker</a>.</li>
                     </ul>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/static-linking.png" alt="Flow diagram of static linking" style="width: 100%;margin: 20px 0px;">
+                    <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/static-linking.png" alt="Flow diagram of static linking">
                     <p class="imageCredits centerText">App using static libraries, Courtesy: <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html">Apple</a></p>
                     <h3>Dynamic</h3>
                     <ul>
                     <li>When an app is using a dynamic library, only the References (rather Names to be precise) of the library is placed in the App Executable by Static Linker.</li>
                     <li>Actual linking takes place at launch time or at run time by <a href="https://en.wikipedia.org/wiki/Dynamic_linker">Dynamic Linker</a>, when both app executable and dynamic library are placed in the memory.</li>
                     </ul>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking.png" alt="Flow diagram of dynamic linking" style="width: 100%;margin: 20px 0px;">
+                    <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking.png" alt="Flow diagram of dynamic linking">
                     <p class="imageCredits centerText">App using dynamic libraries, Courtesy: <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html">Apple</a></p>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking-explained.png" alt="Flow diagram explaining dynamic linking" style="width: 100%;margin: 20px 0px;">
+                    <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking-explained.png" alt="Flow diagram explaining dynamic linking">
+                    <p class="imageCredits centerText">Flow diagram explaining dynamic linking</p>
                     <h2>Launch Times and Memory Footprints</h2>
                     <h3>Static</h3>
                     <ul>
@@ -125,7 +126,8 @@
                     Now, we got an OS update &amp; AppKit version is bumped to 1.0.1 on the File System.</li>
                     </ul>
                     <p><a href="https://en.wikipedia.org/wiki/Dynamic_linker">Dynamic Loader</a> sees our App executable &amp; finds the name AppKit to load. As long as AppKit is present (and is compatible, which it will be in most cases) in the File System, Dynamic Loader will be able to load it, the version of AppKit doesn’t matter. We don’t need to do anything extra &amp; we get the new version 1.0.1 for free.</p>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/static-vs-dynamic.png" alt="Flow diagram explaining static vs dynamic load" style="width: 100%;margin: 20px 0px;">
+                    <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/static-vs-dynamic.png" alt="Flow diagram explaining static vs dynamic load">
+                    <p class="imageCredits centerText">Flow diagram explaining static vs dynamic load</p>
                     <h2>Run time Speed</h2>
                     <p>Programs that use dynamic libraries are slower at run time than those using statically-linked libraries, especially when app is trying to link the dynamic library module at run time.</p>
                     <p>This is a fair trade off for faster launch times &amp; less memory footprints.</p>
@@ -154,18 +156,22 @@
                     <ol>
                     <li>Core Swift libraries, used by our Swift Apps are in <em>Library</em></li>
                     </ol>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/core-swift-dylib.png" alt="Swift Dynamic libaries in Finder" style="width: 100%;margin: 20px 0px;">
+                    <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/core-swift-dylib.png" alt="Swift Dynamic libaries in Finder">
+                    <p class="imageCredits centerText">Swift Dynamic libaries in Finder</p>
                     <ol start="2">
                     <li>Helper Swift libraries, used by <em>swiftc</em> (Swift Compiler) &amp; Xcode are in <em>User Library</em></li>
                     </ol>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/helper-swift-lib.png" alt="Swift helper libaries in Finder" style="width: 100%;margin: 20px 0px;">
+                    <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/helper-swift-lib.png" alt="Swift helper libaries in Finder">
+                    <p class="imageCredits centerText">Swift helper libaries in Finder</p>
                     <ol start="3">
                     <li>Locations of all the dylibs used by your App<br />
                     You can use <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/LoggingDynamicLoaderEvents.html">Logging Dynamic Loader Events</a> Environment Variables on <em>Xcode -&gt; Active Scheme -&gt; Edit Scheme</em> like this:</li>
                     </ol>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries.png" alt="Xcode Dylib print libraries" style="width: 100%;margin: 20px 0px;">
+                    <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries.png" alt="Xcode Dylib print libraries">
+                    <p class="imageCredits centerText">Xcode Dylib print libraries Settings</p>
                     <p>It will give an output like this for an empty single view iOS App on Debugger console:</p>
-                    <img src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries-output.png" alt="Xcode Dylib print libraries output" style="width: 100%;margin: 20px 0px;">
+                    <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries-output.png" alt="Xcode Dylib print libraries output">
+                    <p class="imageCredits centerText">Xcode Dylib print libraries output</p>
                     <blockquote>
                     <p><em><strong>Jesse:</strong></em> <em>In the previous section, it was mentioned that Dynamic Libraries are loaded at launch time or run time. What’s the difference between them?</em></p>
                     </blockquote>

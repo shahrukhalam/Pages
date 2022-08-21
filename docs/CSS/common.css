@@ -7,6 +7,14 @@ margin: 0px auto 0px auto;
 .centerDivY {
 margin: auto 0px auto 0px;
 }
+.imageFullWidth {
+margin: 20px 0px 20px 0px;
+width: 100%;
+}
+.imageHalfWidth {
+margin: 20px auto 20px auto;
+width: 50%;
+}
 .link {
 color: rgba(41, 151, 255, 1.0);
 font-size: 100%;

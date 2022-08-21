@@ -16,6 +16,14 @@ private let centerDivXStyle = ClassStyle(forClass: .centerDivX)
 private let centerDivYStyle = ClassStyle(forClass: .centerDivY)
     .margin(top: .auto, bottom: .auto)
 
+private let imageFullWidth = ClassStyle(forClass: .imageFullWidth)
+    .margin(top: .pixel(20), bottom: .pixel(20))
+    .size(width: .percentage(100))
+
+private let imageHalfWidth = ClassStyle(forClass: .imageHalfWidth)
+    .margin(left: .auto, top: .pixel(20), right: .auto, bottom: .pixel(20))
+    .size(width: .percentage(50))
+
 private let linkStyle = ClassStyle(forClass: .link)
     .foregroundColor(.DarkHoverNavBarItem)
     .font(size: .percentage(100))
@@ -34,6 +42,8 @@ public let commonStyles = [
     centerTextStyle,
     centerDivXStyle,
     centerDivYStyle,
+    imageFullWidth,
+    imageHalfWidth,
     linkStyle,
     linkHoverStyle,
 ]

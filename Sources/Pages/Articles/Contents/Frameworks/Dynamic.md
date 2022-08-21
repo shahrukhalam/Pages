@@ -2,7 +2,7 @@
 
 <p class="intro">Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.</p>
 
-<img src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert" style="width: 100%;margin: 20px 0px;">
+<img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert">
 <p class="imageCredits centerText">Breaking Bad Meth Van, Courtesy: <a href="https://www.artstation.com/artwork/XBmkGw">Artstation</a></p>
 
 This Article will be in the form of a questionnaire about Dynamic Library in iOS between **Jesse Pinkman** & **Heisenberg**, fictional characters from the epic TV Series [Breaking Bad](https://en.wikipedia.org/wiki/Breaking_Bad). Those who haven't watched it, Walter White (aka Heisenberg) is like a mentor to Jesse Pinkman, but for all the unconventional things.
@@ -31,17 +31,18 @@ This Article will be in the form of a questionnaire about Dynamic Library in iOS
 ### Static
 - When an app is linked with a static library, the library code that the app uses is directly copied to the generated App Executable by [Static Linker](https://en.wikipedia.org/wiki/Linker_(computing)).
 
-<img src="../../Images/Articles/Frameworks/Dynamic/static-linking.png" alt="Flow diagram of static linking" style="width: 100%;margin: 20px 0px;">
+<img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/static-linking.png" alt="Flow diagram of static linking">
 <p class="imageCredits centerText">App using static libraries, Courtesy: <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html">Apple</a></p>
 
 ### Dynamic
 - When an app is using a dynamic library, only the References (rather Names to be precise) of the library is placed in the App Executable by Static Linker.
 - Actual linking takes place at launch time or at run time by [Dynamic Linker](https://en.wikipedia.org/wiki/Dynamic_linker), when both app executable and dynamic library are placed in the memory.
 
-<img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking.png" alt="Flow diagram of dynamic linking" style="width: 100%;margin: 20px 0px;">
+<img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking.png" alt="Flow diagram of dynamic linking">
 <p class="imageCredits centerText">App using dynamic libraries, Courtesy: <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html">Apple</a></p>
 
-<img src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking-explained.png" alt="Flow diagram explaining dynamic linking" style="width: 100%;margin: 20px 0px;">
+<img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/dynamic-linking-explained.png" alt="Flow diagram explaining dynamic linking">
+<p class="imageCredits centerText">Flow diagram explaining dynamic linking</p>
 
 ## Launch Times and Memory Footprints
 ### Static
@@ -73,7 +74,8 @@ Now, we got an OS update & AppKit version is bumped to 1.0.1 on the File System.
 
 [Dynamic Loader](https://en.wikipedia.org/wiki/Dynamic_linker) sees our App executable & finds the name AppKit to load. As long as AppKit is present (and is compatible, which it will be in most cases) in the File System, Dynamic Loader will be able to load it, the version of AppKit doesn’t matter. We don’t need to do anything extra & we get the new version 1.0.1 for free.
 
-<img src="../../Images/Articles/Frameworks/Dynamic/static-vs-dynamic.png" alt="Flow diagram explaining static vs dynamic load" style="width: 100%;margin: 20px 0px;">
+<img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/static-vs-dynamic.png" alt="Flow diagram explaining static vs dynamic load">
+<p class="imageCredits centerText">Flow diagram explaining static vs dynamic load</p>
 
 ## Run time Speed
 Programs that use dynamic libraries are slower at run time than those using statically-linked libraries, especially when app is trying to link the dynamic library module at run time.
@@ -99,20 +101,24 @@ Continuing the previous example, Adobe developers can release *AdobeCore* 1.0.1 
 
 1. Core Swift libraries, used by our Swift Apps are in *Library*
 
-<img src="../../Images/Articles/Frameworks/Dynamic/core-swift-dylib.png" alt="Swift Dynamic libaries in Finder" style="width: 100%;margin: 20px 0px;">
+<img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/core-swift-dylib.png" alt="Swift Dynamic libaries in Finder">
+<p class="imageCredits centerText">Swift Dynamic libaries in Finder</p>
 
 2. Helper Swift libraries, used by *swiftc* (Swift Compiler) & Xcode are in *User Library*
 
-<img src="../../Images/Articles/Frameworks/Dynamic/helper-swift-lib.png" alt="Swift helper libaries in Finder" style="width: 100%;margin: 20px 0px;">
+<img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/helper-swift-lib.png" alt="Swift helper libaries in Finder">
+<p class="imageCredits centerText">Swift helper libaries in Finder</p>
 
 3. Locations of all the dylibs used by your App  
 You can use [Logging Dynamic Loader Events](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/LoggingDynamicLoaderEvents.html) Environment Variables on *Xcode -> Active Scheme -> Edit Scheme* like this:
 
-<img src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries.png" alt="Xcode Dylib print libraries" style="width: 100%;margin: 20px 0px;">
+<img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries.png" alt="Xcode Dylib print libraries">
+<p class="imageCredits centerText">Xcode Dylib print libraries Settings</p>
 
 It will give an output like this for an empty single view iOS App on Debugger console:
 
-<img src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries-output.png" alt="Xcode Dylib print libraries output" style="width: 100%;margin: 20px 0px;">
+<img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/dylib-print-libraries-output.png" alt="Xcode Dylib print libraries output">
+<p class="imageCredits centerText">Xcode Dylib print libraries output</p>
 
 > ***Jesse:*** *In the previous section, it was mentioned that Dynamic Libraries are loaded at launch time or run time. What’s the difference between them?*
 
