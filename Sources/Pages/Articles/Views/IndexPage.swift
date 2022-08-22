@@ -16,8 +16,8 @@ public func indexPage() -> some View {
                            keywords: ["Swift", "SwiftUI", "iOS Development"])
                 socialMeta(title: "Learn iOS Development",
                            description: "Short articles and tutorials on Swift, SwiftUI and iOS Development",
-                           image: .baseURL + ImageDescription.swiftUI.url,
-                           url: .baseURL)
+                           image: .baseURL + .root + ImageDescription.swiftUI.url,
+                           url: .baseURL + .indexLink)
                 commonCSSLinks(root: .empty)
                 indexCSSLinks
             }
