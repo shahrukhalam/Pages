@@ -20,8 +20,8 @@ public extension String {
     static var root: Self = "/Pages/"
     /// Use `../../` in case of local
     static var rootFromArticles: Self = "/Pages/"
-    static var indexLink: Self { root + "index.html" }
+    static var indexLink: Self { root + "index" }
     static private var articlesHTMLFolder: Self { root + "HTML/Articles/" }
-    static var dynmaicFrameworksLink: Self { .articlesHTMLFolder + "dynamic-framework.html" }
+    static var dynmaicFrameworksLink: Self { .articlesHTMLFolder + "dynamic-framework" }
     static var baseURL: Self = "https://shahrukhalam.github.io"
 }
