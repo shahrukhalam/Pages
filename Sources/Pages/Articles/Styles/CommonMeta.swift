@@ -31,3 +31,12 @@ func socialMeta(title: String, description: String, image: String, url: String) 
         Meta(.twitter(.url, content: url)),
     ])
 }
+
+func share(title: String, url: String) -> some HTMLBodyContentView {
+    AnyView([
+        Link(text: "Tweeter", url: "https://twitter.com/intent/tweet?text=I recommend \"\(title)\" by Shahrukh Alam \(url)")
+            .target(.newWindowOrTab),
+        Link(text: "Linkedin", url: "https://www.linkedin.com/sharing/share-offsite/?url=\(url)")
+            .target(.newWindowOrTab)
+    ])
+}
