@@ -19,7 +19,7 @@ public func articlePage(article: Article,
                 socialMeta(title: "How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)",
                            description: "Short article on Static vs Dynamic Libraries in iOS",
                            image: .baseURL + .root + "Images/Articles/Frameworks/Dynamic/xcframework.png",
-                           url: .baseURL + .dynmaicFrameworksLink)
+                           url: .baseURL + .dynamicFrameworksLink)
                 commonCSSLinks(root: root)
                 AnyView(isTesting ? [] : [AnalyticsScript()])
             }

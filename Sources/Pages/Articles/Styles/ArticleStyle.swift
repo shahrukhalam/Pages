@@ -16,6 +16,7 @@ public struct ArticleStyle: CSSStyle {
     public init() {
         let articleStyle = ClassStyle(forClass: .article)
             .backgroundColor(.DarkArticleBackground)
+            .padding(bottom: .pixel(20))
         self.element = articleStyle.element
     }
 }

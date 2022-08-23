@@ -141,10 +141,3 @@ It’s the time when the app is actually running & user is interacting with it, 
 And we will meet with rest of your curiosity in the next cracking session (Part 2). I know that I am leaving you on a cliffhanger & it’s not fair, but neither is Life 😜
 
 That’s enough for now, until next time…
-
-Thanks for reading 🚀  
-if you liked it, please share it with your friends and colleagues 🙏
-
-Happy Coding & Sharing 😍  
-Cheers 🍺  
-**SA**

@@ -21,7 +21,7 @@ struct NavView: HTMLBodyContentView {
         Div {
             Link(text: "Home", url: .indexLink)
                 .identifyBy(cssClass: index == 0 ? .activeLink : .inactiveLink)
-            Link(text: "Articles", url: .dynmaicFrameworksLink)
+            Link(text: "Articles", url: .dynamicFrameworksLink)
                 .identifyBy(cssClass: index == 1 ? .activeLink : .inactiveLink)
             Divider()
                 .backgroundColor(.DarkNavBarDividerColor)
