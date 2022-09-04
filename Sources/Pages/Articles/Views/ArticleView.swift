@@ -35,7 +35,7 @@ private func share(root: String, title: String, url: String) -> some HTMLBodyCon
     AnyView(
         Div {
             Paragraphs("Thanks for reading 🚀" + .lineBreak + "If you liked this article, please share it with your friends and fellow iOS Developers 🙏")
-            ImageLink(url: "https://twitter.com/intent/tweet?text=I recommend \"\(title)\" by Shahrukh Alam \(url)", content: {
+            ImageLink(url: "https://twitter.com/intent/tweet?text=I recommend \(title) by Shahrukh Alam \(url)", content: {
                 Image(root + "Images/Articles/twitter.png", alternateText: "")
                 Paragraphs("Share this article on Twitter")
                     .display(.inline)
