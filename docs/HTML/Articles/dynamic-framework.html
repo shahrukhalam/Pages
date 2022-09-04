@@ -52,6 +52,11 @@
                 <div>
                     <h1>How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)</h1>
                     <p class="intro">Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.</p>
+                    <!--<pre><code class="language-swift">-->
+                    <!--struct TestStruct {-->
+                    <!--    var text: String = "I am a big text, I am a big text, I am a big text, I am a big text."-->
+                    <!--}-->
+                    <!--</code></pre>-->
                     <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert">
                     <p class="imageCredits centerText">Breaking Bad Meth Van, Courtesy: <a href="https://www.artstation.com/artwork/XBmkGw">Artstation</a></p>
                     <p>This Article will be in the form of a questionnaire about Dynamic Library in iOS between <strong>Jesse Pinkman</strong> &amp; <strong>Heisenberg</strong>, fictional characters from the epic TV Series <a href="https://en.wikipedia.org/wiki/Breaking_Bad">Breaking Bad</a>. Those who haven't watched it, Walter White (aka Heisenberg) is like a mentor to Jesse Pinkman, but for all the unconventional things.</p>
@@ -225,6 +230,15 @@
             </div>
         </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js">  </script>
-    <script> hljs.highlightAll(); </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">  </script>
+    <script> 
+    /* Remove Whitespaces on left */
+    $("pre code").each(function(){
+        var html = $(this).html();
+        var pattern = html.match(/\s*\n[\t\s]*/);
+        $(this).html(html.replace(new RegExp(pattern, "g"),'\n'));
+    });
+    hljs.highlightAll();
+     </script>
 </body>
 </html>

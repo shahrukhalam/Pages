@@ -2,6 +2,12 @@
 
 <p class="intro">Are you Duplicating a piece of code for a particular functionality across multiple Apps? Do you find it difficult to fix a bug in all those places? If Yes, then Dynamic Library is an answer to your problems.</p>
 
+<!--<pre><code class="language-swift">-->
+<!--struct TestStruct {-->
+<!--    var text: String = "I am a big text, I am a big text, I am a big text, I am a big text."-->
+<!--}-->
+<!--</code></pre>-->
+
 <img class="imageFullWidth" src="../../Images/Articles/Frameworks/Dynamic/breaking-bad.jpeg" alt="Breaking Bad van in the desert">
 <p class="imageCredits centerText">Breaking Bad Meth Van, Courtesy: <a href="https://www.artstation.com/artwork/XBmkGw">Artstation</a></p>
 

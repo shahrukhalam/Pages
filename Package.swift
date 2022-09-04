@@ -10,13 +10,12 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../HTMLDSL"),
-        .package(url: "https://github.com/JohnSundell/Splash", from: "0.16.0"),
         .package(url: "https://github.com/kylef/PathKit.git", from: "1.0.1")
     ],
     targets: [
         .executableTarget(name: "PagesCLI", dependencies: ["Pages"]),
         .target(name: "Pages",
-                dependencies: ["HTMLDSL", "Splash", "PathKit"],
+                dependencies: ["HTMLDSL", "PathKit"],
                 resources: [.process("Articles/Contents")]),
         .testTarget(name: "PagesTests", dependencies: ["Pages"]),
     ]

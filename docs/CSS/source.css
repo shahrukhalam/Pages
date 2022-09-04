@@ -4,10 +4,11 @@ pre {
     border-color: rgba(76, 76, 76, 1);
     border-width: 1px;
     border-style: solid;
-    display: block;
-    white-space: pre-line;
-    padding: 20px;
+    padding: 0px 26px 26px 26px;
     margin: 10px 0px;
+    display: block;
+    white-space: pre;
+    overflow-x: scroll;
 }
 
 pre code {
