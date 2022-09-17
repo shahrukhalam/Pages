@@ -1,0 +1,26 @@
+//
+//  GridStyle.swift
+//  
+//
+//  Created by Shahrukh Alam on 17/09/22.
+//
+
+import HTMLDSL
+
+private let gridContainerOwnStyle = ClassStyle(forClass: .gridContainer)
+    .display(.grid)
+    .gridNumberOfColumnsWithWidth([.auto, .auto])
+    .gridColumn(gap: 12)
+private let gridContainerLinkStyle = ClassStyle(.gridItem, cssTag: .hover, tag: .enclosing(.link))
+    .textDecoration(.underline)
+public let gridContainerStyle = [gridContainerOwnStyle, gridContainerLinkStyle]
+    .map { $0.element }
+    .joined(separator: "\n")
+
+private let gridContainerSmallOwnStyle = ClassStyle(forClass: .gridContainer)
+    .display(.grid)
+    .gridNumberOfColumnsWithWidth([.auto])
+    .gridRow(gap: 12)
+public let gridContainerSmallStyle = [gridContainerSmallOwnStyle, gridContainerLinkStyle]
+    .map { $0.element }
+    .joined(separator: "\n")
