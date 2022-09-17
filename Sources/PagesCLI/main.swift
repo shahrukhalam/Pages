@@ -76,7 +76,7 @@ private func generateHTML() throws {
     let indexHTML = indexPage().element
     try indexHTMLPath.write(indexHTML)
     
-    let dynamicFrameworkArticlePath = htmlPath + Path("Articles/dynamic-framework.html")
+    let dynamicFrameworkArticlePath = frameworksHTMLPath + Path("dynamic-framework.html")
     let dynamicFrameworkArticleHTML = articlePage(article: article).element
     try dynamicFrameworkArticlePath.write(dynamicFrameworkArticleHTML)
 }
@@ -84,7 +84,8 @@ private func generateHTML() throws {
 private var docsFolder: Path { Path.current + "docs" }
 private var cssPath: Path { docsFolder + Path("CSS") }
 private var indexHTMLFolder: Path { docsFolder }
-private var htmlPath: Path { docsFolder + Path("HTML") }
+private var articlesHTMLPath: Path { docsFolder + Path("articles") }
+private var frameworksHTMLPath: Path { articlesHTMLPath + Path("frameworks") }
 
 private var kickOffStyleElement: String { KickOffStyle().element }
 private var navStyleElement: String { NavStyle().element }
