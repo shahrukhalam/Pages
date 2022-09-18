@@ -31,6 +31,9 @@ public extension String {
     static private var articlesHTMLFolder: Self { root + "articles/" }
     static private var frameworksHTMLFolder: Self { .articlesHTMLFolder + "frameworks/" }
     /// Add `.htmlPostfix` in case of local
+    static var articlesListLink: Self { .articlesHTMLFolder + "list" }
+    /// Add `.htmlPostfix` in case of local
     static var dynamicFrameworksLink: Self { .frameworksHTMLFolder + "dynamic-framework" }
+    
     static var baseURL: Self = "https://shahrukhalam.github.io"
 }
