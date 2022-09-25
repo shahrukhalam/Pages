@@ -8,15 +8,30 @@
 import HTMLDSL
 
 public struct MarkdownStyle: CSSStyle {
-    public let key: CustomStringConvertible = Tag.empty.description
+    public let key: CustomStringConvertible
     public let styles = [Style]()
     
     public var element: String
     
     public init(type: CSSLink.DeviceType) {
+        self.key = Tag.empty.description
         let containerStyle = ClassStyle(forClass: .markdown)
             .size(width: type == .wide ? .percentage(60) : .percentage(90))
             .margin(left: .auto, right: .auto)
+        let allStyles = Self.commonStyles + [containerStyle]
+        self.element = allStyles.map { $0.element }.joined(separator: "\n")
+    }
+
+    init(mediaType: MediaStyle.DeviceType) {
+        self.key = Tag.empty.description
+        let containerStyle = ClassStyle(forClass: .markdown)
+            .size(width: mediaType == .wide ? .percentage(60) : .percentage(90))
+            .margin(left: .auto, right: .auto)
+        let allStyles: [CSSStyle] = Self.commonStyles + [MediaStyle(for: mediaType, with: containerStyle)]
+        self.element = allStyles.map { $0.element }.joined(separator: "\n")
+    }
+
+    static var commonStyles: [ClassStyle] {
         let h1Style = ClassStyle(forClass: .markdown, withTag: .enclosing(.headings(.h1)))
             .padding(top: .pixel(20), bottom: .pixel(20))
             .font(size: .percentage(300))
@@ -56,8 +71,7 @@ public struct MarkdownStyle: CSSStyle {
             .textDecoration(.none)
         let linkHoverStyle = ClassStyle(.markdown, tag: .enclosing(.link), cssTag: .hover)
             .textDecoration(.underline)
-        let allStyles = [containerStyle, h1Style, h2Style, h3Style, pStyle, introStyle, imageCreditsStyle, liStyle, blockquoteStyle, linkStyle, linkHoverStyle].map { $0.element }
-        self.element = allStyles
-            .joined(separator: "\n")
+        let commonStyles = [h1Style, h2Style, h3Style, pStyle, introStyle, imageCreditsStyle, liStyle, blockquoteStyle, linkStyle, linkHoverStyle]
+        return commonStyles
     }
 }

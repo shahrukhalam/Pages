@@ -18,6 +18,7 @@ public func indexPage() -> some View {
                            description: "Short articles and tutorials on Swift, SwiftUI and iOS Development",
                            image: .baseURL + .root + ImageDescription.swiftUI.url,
                            url: .baseURL + .indexLink)
+                commonCSS
                 commonCSSLinks(root: .empty)
                 indexCSSLinks
             }

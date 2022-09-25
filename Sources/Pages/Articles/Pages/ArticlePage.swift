@@ -20,6 +20,8 @@ public func articlePage(article: Article,
                            description: "Short article on Static vs Dynamic Libraries in iOS",
                            image: .baseURL + .root + "Images/Articles/Frameworks/Dynamic/xcframework.png",
                            url: .baseURL + .dynamicFrameworksLink)
+                commonCSS
+                articlePageCSS
                 commonCSSLinks(root: root)
                 AnyView(isTesting ? [] : [AnalyticsScript()])
             }

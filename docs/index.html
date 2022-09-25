@@ -17,16 +17,146 @@
     <meta name="twitter:image" content="https://shahrukhalam.github.io/Pages/Images/Index/swiftUI.png">
     <meta property="og:url" content="https://shahrukhalam.github.io/Pages/index">
     <meta name="twitter:url" content="https://shahrukhalam.github.io/Pages/index">
-    <link rel="icon" type="image/png" href="/Pages/Images/Index/favicon.png">
-    <link rel="stylesheet" href="CSS/kickoff.css">
-    <link rel="stylesheet" href="CSS/nav.css">
-    <link rel="stylesheet" href="CSS/body.css">
-    <link rel="stylesheet" href="CSS/common.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="CSS/font.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="CSS/font-small.css">
-    <link rel="stylesheet" href="CSS/article.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="CSS/markdown.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="CSS/markdown-small.css">
+    <style>
+    * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    }
+    .indexNav {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: auto;
+    background-color: rgba(29, 29, 31, 0.72);
+    text-align: center;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    z-index: 1;
+    }
+    .indexNav a {
+    padding: 16px 16px 16px 16px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 125%;
+    }
+    .activeLink {
+    color: rgba(139, 139, 139, 1.0);
+    pointer-events: none;
+    }
+    .inactiveLink {
+    color: White;
+    }
+    a:hover {
+    color: rgba(41, 151, 255, 1.0);
+    }
+    body {
+    padding: 57px 0px 0px 0px;
+    background-color: Black;
+    color: White;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial;
+    }
+    .centerText {
+    text-align: center;
+    }
+    .centerDivX {
+    margin: 0px auto 0px auto;
+    }
+    .centerDivY {
+    margin: auto 0px auto 0px;
+    }
+    .imageFullWidth {
+    margin: 20px 0px 20px 0px;
+    width: 100%;
+    }
+    .imageHalfWidth {
+    margin: 20px auto 20px auto;
+    width: 50%;
+    }
+    .link {
+    color: rgba(41, 151, 255, 1.0);
+    font-size: 100%;
+    text-decoration: none;
+    }
+    .link:hover {
+    text-decoration: underline;
+    }
+    @media screen and (min-width: 900px) {
+    .largeTitle {
+    font-size: 40px;
+    font-weight: 400;
+    }
+    .title1 {
+    font-size: 32px;
+    font-weight: 400;
+    }
+    .title2 {
+    font-size: 28px;
+    font-weight: 500;
+    }
+    .title3 {
+    font-size: 24px;
+    font-weight: 600;
+    }
+    .headline {
+    font-size: 20px;
+    font-weight: 700;
+    }
+    .body {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    .callout {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    .subheadline {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    }
+    @media screen and (max-width: 900px) {
+    .largeTitle {
+    font-size: 34px;
+    font-weight: 400;
+    }
+    .title1 {
+    font-size: 28px;
+    font-weight: 400;
+    }
+    .title2 {
+    font-size: 22px;
+    font-weight: 500;
+    }
+    .title3 {
+    font-size: 20px;
+    font-weight: 600;
+    }
+    .headline {
+    font-size: 17px;
+    font-weight: 600;
+    }
+    .body {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    .callout {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    .subheadline {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    }
+    </style>
+    <link rel="icon" type="image/png" href="https://shahrukhalam.github.io/Pages/Images/Index/favicon.png">
     <link rel="stylesheet" href="CSS/source.css">
     <link rel="stylesheet" media="screen and (min-width: 900px)" href="/Pages/CSS/index-section-header.css">
     <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/index-section-header-small.css">

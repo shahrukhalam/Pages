@@ -17,16 +17,262 @@
     <meta name="twitter:image" content="https://shahrukhalam.github.io/Pages/Images/Articles/Frameworks/Dynamic/xcframework.png">
     <meta property="og:url" content="https://shahrukhalam.github.io/Pages/articles/frameworks/dynamic-framework">
     <meta name="twitter:url" content="https://shahrukhalam.github.io/Pages/articles/frameworks/dynamic-framework">
-    <link rel="icon" type="image/png" href="/Pages/Images/Index/favicon.png">
-    <link rel="stylesheet" href="/Pages/CSS/kickoff.css">
-    <link rel="stylesheet" href="/Pages/CSS/nav.css">
-    <link rel="stylesheet" href="/Pages/CSS/body.css">
-    <link rel="stylesheet" href="/Pages/CSS/common.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="/Pages/CSS/font.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/font-small.css">
-    <link rel="stylesheet" href="/Pages/CSS/article.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="/Pages/CSS/markdown.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/markdown-small.css">
+    <style>
+    * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    }
+    .indexNav {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: auto;
+    background-color: rgba(29, 29, 31, 0.72);
+    text-align: center;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    z-index: 1;
+    }
+    .indexNav a {
+    padding: 16px 16px 16px 16px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 125%;
+    }
+    .activeLink {
+    color: rgba(139, 139, 139, 1.0);
+    pointer-events: none;
+    }
+    .inactiveLink {
+    color: White;
+    }
+    a:hover {
+    color: rgba(41, 151, 255, 1.0);
+    }
+    body {
+    padding: 57px 0px 0px 0px;
+    background-color: Black;
+    color: White;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial;
+    }
+    .centerText {
+    text-align: center;
+    }
+    .centerDivX {
+    margin: 0px auto 0px auto;
+    }
+    .centerDivY {
+    margin: auto 0px auto 0px;
+    }
+    .imageFullWidth {
+    margin: 20px 0px 20px 0px;
+    width: 100%;
+    }
+    .imageHalfWidth {
+    margin: 20px auto 20px auto;
+    width: 50%;
+    }
+    .link {
+    color: rgba(41, 151, 255, 1.0);
+    font-size: 100%;
+    text-decoration: none;
+    }
+    .link:hover {
+    text-decoration: underline;
+    }
+    @media screen and (min-width: 900px) {
+    .largeTitle {
+    font-size: 40px;
+    font-weight: 400;
+    }
+    .title1 {
+    font-size: 32px;
+    font-weight: 400;
+    }
+    .title2 {
+    font-size: 28px;
+    font-weight: 500;
+    }
+    .title3 {
+    font-size: 24px;
+    font-weight: 600;
+    }
+    .headline {
+    font-size: 20px;
+    font-weight: 700;
+    }
+    .body {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    .callout {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    .subheadline {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    }
+    @media screen and (max-width: 900px) {
+    .largeTitle {
+    font-size: 34px;
+    font-weight: 400;
+    }
+    .title1 {
+    font-size: 28px;
+    font-weight: 400;
+    }
+    .title2 {
+    font-size: 22px;
+    font-weight: 500;
+    }
+    .title3 {
+    font-size: 20px;
+    font-weight: 600;
+    }
+    .headline {
+    font-size: 17px;
+    font-weight: 600;
+    }
+    .body {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    .callout {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    .subheadline {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+    }
+    }
+    </style>
+    <style>
+    .article {
+    background-color: rgba(20, 20, 21, 1.0);
+    padding: 0px 0px 20px 0px;
+    }
+    .markdown h1 {
+    padding: 20px 0px 20px 0px;
+    font-size: 300%;
+    text-align: center;
+    }
+    .markdown h2 {
+    padding: 20px 0px 10px 0px;
+    font-size: 250%;
+    }
+    .markdown h3 {
+    padding: 10px 0px 10px 0px;
+    font-size: 200%;
+    }
+    .markdown p {
+    padding: 10px 0px 10px 0px;
+    font-size: 125%;
+    line-height: 160%;
+    }
+    .markdown .intro {
+    padding: 10px 0px 10px 0px;
+    font-size: 125%;
+    line-height: 160%;
+    color: rgba(139, 139, 139, 1.0);
+    }
+    .markdown .imageCredits {
+    margin: -20px 0px 10px 0px;
+    font-size: 100%;
+    color: rgba(139, 139, 139, 1.0);
+    }
+    .markdown li {
+    padding: 0px 0px 5px 0px;
+    font-size: 125%;
+    line-height: 160%;
+    list-style-image: url("/Pages/Images/Articles/spinning-top.tiff");
+    }
+    .markdown blockquote {
+    margin: 20px 20px 20px 20px;
+    padding: 0px 0px 0px 20px;
+    border-width: 2px;
+    border-left-style: solid;
+    border-color: rgba(76, 76, 76, 1.0);
+    }
+    .markdown a {
+    color: rgba(41, 151, 255, 1.0);
+    text-decoration: none;
+    }
+    .markdown a:hover {
+    text-decoration: underline;
+    }
+    @media screen and (max-width: 900px) {
+    .markdown {
+    width: 90%;
+    margin: 0px auto 0px auto;
+    }
+    }
+    .markdown h1 {
+    padding: 20px 0px 20px 0px;
+    font-size: 300%;
+    text-align: center;
+    }
+    .markdown h2 {
+    padding: 20px 0px 10px 0px;
+    font-size: 250%;
+    }
+    .markdown h3 {
+    padding: 10px 0px 10px 0px;
+    font-size: 200%;
+    }
+    .markdown p {
+    padding: 10px 0px 10px 0px;
+    font-size: 125%;
+    line-height: 160%;
+    }
+    .markdown .intro {
+    padding: 10px 0px 10px 0px;
+    font-size: 125%;
+    line-height: 160%;
+    color: rgba(139, 139, 139, 1.0);
+    }
+    .markdown .imageCredits {
+    margin: -20px 0px 10px 0px;
+    font-size: 100%;
+    color: rgba(139, 139, 139, 1.0);
+    }
+    .markdown li {
+    padding: 0px 0px 5px 0px;
+    font-size: 125%;
+    line-height: 160%;
+    list-style-image: url("/Pages/Images/Articles/spinning-top.tiff");
+    }
+    .markdown blockquote {
+    margin: 20px 20px 20px 20px;
+    padding: 0px 0px 0px 20px;
+    border-width: 2px;
+    border-left-style: solid;
+    border-color: rgba(76, 76, 76, 1.0);
+    }
+    .markdown a {
+    color: rgba(41, 151, 255, 1.0);
+    text-decoration: none;
+    }
+    .markdown a:hover {
+    text-decoration: underline;
+    }
+    @media screen and (min-width: 900px) {
+    .markdown {
+    width: 60%;
+    margin: 0px auto 0px auto;
+    }
+    }
+    </style>
+    <link rel="icon" type="image/png" href="https://shahrukhalam.github.io/Pages/Images/Index/favicon.png">
     <link rel="stylesheet" href="/Pages/CSS/source.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y1NP7BQPP"></script>

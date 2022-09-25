@@ -19,11 +19,11 @@ public extension String {
     /// Replace with `empty` in case of local
     /// Test individual pages in local, links & navigations might not work because relative root doesn't work in local
     static var root: Self = "/Pages/"
-    
+
     static private var localRootFromArticles: Self { "../../" }
     /// Replace with `.localRootFromArticles` in case of local
     static var rootFromArticles: Self = "/Pages/"
-    
+
     static private var htmlPostfix: Self { ".html" }
 
     /// Add `.htmlPostfix` in case of local
