@@ -13,10 +13,10 @@
     <meta name="twitter:title" content="Learn iOS Development">
     <meta property="og:description" content="Short articles and tutorials on Swift, SwiftUI and iOS Development">
     <meta name="twitter:description" content="Short articles and tutorials on Swift, SwiftUI and iOS Development">
-    <meta property="og:image" content="https://shahrukhalam.github.io/Pages/Images/Index/swiftUI.png">
-    <meta name="twitter:image" content="https://shahrukhalam.github.io/Pages/Images/Index/swiftUI.png">
-    <meta property="og:url" content="https://shahrukhalam.github.io/Pages/index">
-    <meta name="twitter:url" content="https://shahrukhalam.github.io/Pages/index">
+    <meta property="og:image" content="Images/Index/swiftUI.png">
+    <meta name="twitter:image" content="Images/Index/swiftUI.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:url" content="">
     <style>
     * {
     margin: 0px 0px 0px 0px;
@@ -80,6 +80,12 @@
     }
     .link:hover {
     text-decoration: underline;
+    }
+    .desktopHidden {
+    display: none;
+    }
+    .mobileHidden {
+    display: none;
     }
     @media screen and (min-width: 900px) {
     .largeTitle {
@@ -156,24 +162,70 @@
     }
     }
     </style>
-    <link rel="icon" type="image/png" href="https://shahrukhalam.github.io/Pages/Images/Index/favicon.png">
-    <link rel="stylesheet" href="CSS/source.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="/Pages/CSS/index-section-header.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/index-section-header-small.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="/Pages/CSS/index-section-header-content.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/index-section-header-content-small.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/index-section-header-hero-small.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="/Pages/CSS/grid.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/grid-small.css">
-    <link rel="stylesheet" media="screen and (min-width: 900px)" href="/Pages/CSS/common-wide.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/Pages/CSS/common-small.css">
+    <style>
+    @media screen and (min-width: 900px) {
+    .sectionHeader {
+    margin: 20px 20px 20px 20px;
+    }
+    }
+    @media screen and (max-width: 900px) {
+    .sectionHeader {
+    margin: 20px 0px 20px 0px;
+    }
+    }
+    @media screen and (min-width: 900px) {
+    .sectionHeaderContent {
+    width: 70%;
+    margin: 0px auto 0px auto;
+    padding: 65px 0px 75px 0px;
+    }
+    .sectionHeaderHero:hover a {
+    text-decoration: underline;
+    }
+    }
+    @media screen and (max-width: 900px) {
+    .sectionHeaderContent {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 65px 20px 75px 20px;
+    }
+    .sectionHeaderHero:hover a {
+    text-decoration: underline;
+    }
+    }
+    @media screen and (max-width: 900px) {
+    .sectionHeaderHero {
+    display: none;
+    }
+    }
+    @media screen and (min-width: 900px) {
+    .gridContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 12px;
+    }
+    .gridItem:hover a {
+    text-decoration: underline;
+    }
+    }
+    @media screen and (max-width: 900px) {
+    .gridContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-row-gap: 12px;
+    }
+    .gridItem:hover a {
+    text-decoration: underline;
+    }
+    }
+    </style>
 </head>
 <body>
         <div class="indexNav">
-            <a href="/Pages/index" class="activeLink">
+            <a href="" class="activeLink">
             Home
             </a>
-            <a href="/Pages/articles/frameworks/dynamic-framework" class="inactiveLink">
+            <a href="" class="inactiveLink">
             Articles
             </a>
             <hr style="background-color: rgba(76, 76, 76, 1.0);height: 1px;border-width: 0px;">
@@ -190,7 +242,7 @@
             top: auto;
             right: auto;
             bottom: auto;" class="sectionHeaderHero">
-                <a href="/Pages/articles/frameworks/dynamic-framework" style="position: absolute;left: 0px;
+                <a href="articles/frameworks/dynamic-framework" style="position: absolute;left: 0px;
                 top: 0px;
                 right: 0px;
                 bottom: 0px;">
@@ -201,7 +253,7 @@
                 bottom: auto;">
                     <h1 class="title3"> SwiftUI </h1>
                     <h1 class="callout"> Build Apps with shared code and unique experience for iPad, iPhone and Mac. </h1>
-                    <a href="/Pages/articles/frameworks/dynamic-framework" class="link" style="display: inline-block;margin: 11px 0px 0px 0px;">
+                    <a href="articles/frameworks/dynamic-framework" class="link" style="display: inline-block;margin: 11px 0px 0px 0px;">
                     Read
                     </a>
                 </div>
@@ -212,7 +264,7 @@
                     top: auto;
                     right: auto;
                     bottom: auto;background-color: Black;border-radius: 16px;" class="gridItem desktopHidden">
-                        <a href="/Pages/articles/frameworks/dynamic-framework" style="position: absolute;left: 0px;
+                        <a href="articles/frameworks/dynamic-framework" style="position: absolute;left: 0px;
                         top: 0px;
                         right: 0px;
                         bottom: 0px;">
@@ -221,7 +273,7 @@
                         <div style="margin: 16px 16px 16px 16px;">
                             <h1 class="headline"> SwiftUI </h1>
                             <h1 class="subheadline"> Build Apps with shared code and unique experience for iPad, iPhone and Mac. </h1>
-                            <a href="/Pages/articles/frameworks/dynamic-framework" class="link" style="display: inline-block;margin: 16px 0px 0px 0px;">
+                            <a href="articles/frameworks/dynamic-framework" class="link" style="display: inline-block;margin: 16px 0px 0px 0px;">
                             Read
                             </a>
                         </div>
@@ -230,7 +282,7 @@
                     top: auto;
                     right: auto;
                     bottom: auto;background-color: Black;border-radius: 16px;" class="gridItem">
-                        <a href="/Pages/articles/frameworks/dynamic-framework" style="position: absolute;left: 0px;
+                        <a href="articles/frameworks/dynamic-framework" style="position: absolute;left: 0px;
                         top: 0px;
                         right: 0px;
                         bottom: 0px;">
@@ -239,7 +291,7 @@
                         <div style="margin: 16px 16px 16px 16px;">
                             <h1 class="headline"> Swift </h1>
                             <h1 class="subheadline"> Adopt the newest features in the Swift ecosystem to help you build better apps. </h1>
-                            <a href="/Pages/articles/frameworks/dynamic-framework" class="link" style="display: inline-block;margin: 16px 0px 0px 0px;">
+                            <a href="articles/frameworks/dynamic-framework" class="link" style="display: inline-block;margin: 16px 0px 0px 0px;">
                             Read
                             </a>
                         </div>
@@ -248,16 +300,16 @@
                     top: auto;
                     right: auto;
                     bottom: auto;background-color: Black;border-radius: 16px;" class="gridItem">
-                        <a href="/Pages/articles/frameworks/dynamic-framework" style="position: absolute;left: 0px;
+                        <a href="articles/frameworks/dynamic-framework" style="position: absolute;left: 0px;
                         top: 0px;
                         right: 0px;
                         bottom: 0px;">
                         </a>
-                        <img src="Images/Index/xcframework.png" alt="Diagram of XCFramework spporting multiple platforms" style="width: 100%;border-radius: 16px 16px 0px 0px;">
+                        <img src="Images/Index/xcframework.png" alt="Diagram of XCFramework supporting multiple platforms" style="width: 100%;border-radius: 16px 16px 0px 0px;">
                         <div style="margin: 16px 16px 16px 16px;">
                             <h1 class="headline"> Frameworks </h1>
                             <h1 class="subheadline"> Learn how to build modular, reusable and testable code for multiple platforms. </h1>
-                            <a href="/Pages/articles/frameworks/dynamic-framework" class="link" style="display: inline-block;margin: 16px 0px 0px 0px;">
+                            <a href="articles/frameworks/dynamic-framework" class="link" style="display: inline-block;margin: 16px 0px 0px 0px;">
                             Read
                             </a>
                         </div>

@@ -7,13 +7,6 @@
 
 import HTMLDSL
 
-func commonCSSLinks(root: String) -> some HTMLContentView {
-    AnyView([
-        CSSLink(favicon: .baseURL + .root + "Images/Index/favicon.png"),
-        CSSLink(path: root + "CSS/source.css")
-    ])
-}
-
 var commonCSS: some HTMLHeadContentView {
     HeadStyle {
         KickOffStyle()

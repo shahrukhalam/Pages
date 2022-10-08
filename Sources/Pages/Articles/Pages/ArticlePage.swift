@@ -8,7 +8,6 @@
 import HTMLDSL
 
 public func articlePage(article: Article,
-                        root: String = .rootFromArticles,
                         isTesting: Bool = false) -> some View {
     Document {
         HTML {
@@ -18,11 +17,11 @@ public func articlePage(article: Article,
                            keywords: ["Static Library", "Dynamic Library", "Static Framework", "Dynamic Framework", "Static vs Dynamic Library", "Static vs Dynamic Framework", "Static vs Dynamic Library in iOS", "Static vs Dynamic Framework in iOS"])
                 socialMeta(title: "How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)",
                            description: "Short article on Static vs Dynamic Libraries in iOS",
-                           image: .baseURL + .root + "Images/Articles/Frameworks/Dynamic/xcframework.png",
-                           url: .baseURL + .dynamicFrameworksLink)
+                           image: "Images/Articles/Frameworks/Dynamic/xcframework.png",
+                           url: "")
                 commonCSS
                 articlePageCSS
-                commonCSSLinks(root: root)
+                commonCSSLinks()
                 AnyView(isTesting ? [] : [AnalyticsScript()])
             }
             

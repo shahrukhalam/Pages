@@ -46,4 +46,6 @@ public let commonStyles = [
     imageHalfWidth,
     linkStyle,
     linkHoverStyle,
+    desktopHiddenStyle,
+    mobileHiddenStyle
 ]

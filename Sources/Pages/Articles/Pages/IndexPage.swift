@@ -1,31 +1,25 @@
-//
-//  IndexPage.swift
-//  
-//
-//  Created by Shahrukh Alam on 10/08/22.
-//
-
 import HTMLDSL
 
-public func indexPage() -> some View {
+public func indexPage(header: SectionHeader) -> some View {
     Document {
         HTML {
             Head {
                 Title("Learn iOS Development")
                 commonMeta(description: "Short articles and tutorials on Swift, SwiftUI and iOS Development",
                            keywords: ["Swift", "SwiftUI", "iOS Development"])
-                socialMeta(title: "Learn iOS Development",
-                           description: "Short articles and tutorials on Swift, SwiftUI and iOS Development",
-                           image: .baseURL + .root + ImageDescription.swiftUI.url,
-                           url: .baseURL + .indexLink)
+//                socialMeta(title: "Learn iOS Development",
+//                           description: "Short articles and tutorials on Swift, SwiftUI and iOS Development",
+//                           image: ImageDescription.swiftUI.url,
+//                           url: "")
                 commonCSS
-                commonCSSLinks(root: .empty)
-                indexCSSLinks
+//                commonCSSLinks(root: .empty)
+//                indexCSSLinks
+                indexCSS
             }
             
             Body {
                 NavView(index: 0)
-                sectionHeader(with: .mock)
+                sectionHeader(with: header)
             }
         }
     }

@@ -1,18 +1,11 @@
-//
-//  SectionHeader.swift
-//  
-//
-//  Created by Shahrukh Alam on 17/09/22.
-//
-
-struct SectionHeader {
+public struct SectionHeader {
     let description: Description
     let hero: Detail
     let grids: [(Detail, isHiddenInDesktop: Bool)]
-}
 
-extension SectionHeader {
-    static let mock: Self = .init(description: .iOSDevelopment,
-                                  hero: .swiftUI,
-                                  grids: [(.swiftUI, true), (.swift, false), (.frameworks, false)])
+    public init(description: Description, hero: Detail, grids: [(Detail, isHiddenInDesktop: Bool)]) {
+        self.description = description
+        self.hero = hero
+        self.grids = grids
+    }
 }
