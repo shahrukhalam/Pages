@@ -17,7 +17,7 @@ public func articlePage(article: Article,
                            keywords: ["Static Library", "Dynamic Library", "Static Framework", "Dynamic Framework", "Static vs Dynamic Library", "Static vs Dynamic Framework", "Static vs Dynamic Library in iOS", "Static vs Dynamic Framework in iOS"])
                 socialMeta(title: "How Jesse Pinkman Cracked Dynamic Library in iOS (Part 1)",
                            description: "Short article on Static vs Dynamic Libraries in iOS",
-                           image: "/images/articles/frameworks/001-dynamic/xcframework.png",
+                           image: "/images/index/xcframework.png",
                            url: "")
                 commonCSS
                 articlePageCSS
