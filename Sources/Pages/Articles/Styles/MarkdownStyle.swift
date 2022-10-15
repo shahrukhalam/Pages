@@ -59,7 +59,7 @@ public struct MarkdownStyle: CSSStyle {
             .padding(bottom: .pixel(5))
             .font(size: .percentage(125))
             .lineHeight(.percentage(160))
-            .listImage(url: "Images/Articles/spinning-top.tiff")
+            .listImage(url: "/Images/Articles/spinning-top.tiff")
         let blockquoteStyle = ClassStyle(forClass: .markdown, withTag: .enclosing(.blockquote))
             .margin(uniform: .pixel(20))
             .padding(left: .pixel(20))

@@ -35,14 +35,14 @@ private func share(title: String, url: String) -> some HTMLBodyContentView {
         Div {
             Paragraphs("Thanks for reading 🚀" + .lineBreak + "If you liked this article, please share it with your friends and fellow iOS Developers 🙏")
             ImageLink(url: "https://twitter.com/intent/tweet?text=I recommend \(title) by Shahrukh Alam \(url)", content: {
-                Image("Images/Articles/twitter.png", alternateText: "")
+                Image("/Images/Articles/twitter.png", alternateText: "")
                 Paragraphs("Share this article on Twitter")
                     .display(.inline)
             })
             .display(.block)
             .target(.newWindowOrTab)
             ImageLink(url: "https://www.linkedin.com/sharing/share-offsite/?url=\(url)", content: {
-                Image("Images/Articles/linkedin.png", alternateText: "")
+                Image("/Images/Articles/linkedin.png", alternateText: "")
                 Paragraphs("Share this article on Linkedin")
                     .display(.inline)
             })
