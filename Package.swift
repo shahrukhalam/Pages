@@ -9,14 +9,10 @@ let package = Package(
         .library(name: "Pages", targets: ["Pages"])
     ],
     dependencies: [
-        .package(path: "../HTMLDSL"),
-        .package(url: "https://github.com/kylef/PathKit.git", from: "1.0.1")
+        .package(path: "../HTMLDSL")
     ],
     targets: [
-        .executableTarget(name: "PagesCLI", dependencies: ["Pages"]),
-        .target(name: "Pages",
-                dependencies: ["HTMLDSL", "PathKit"],
-                resources: [.process("Articles/Contents")]),
+        .target(name: "Pages", dependencies: ["HTMLDSL"]),
         .testTarget(name: "PagesTests", dependencies: ["Pages"]),
     ]
 )
