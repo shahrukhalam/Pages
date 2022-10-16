@@ -1,19 +1,12 @@
 import HTMLDSL
 
-public func indexPage(header: SectionHeader) -> some View {
+public func indexPage(header: SectionHeader, meta: MetaDetail) -> some View {
     Document {
         HTML {
             Head {
-                Title("Learn iOS Development")
-                commonMeta(description: "Short articles and tutorials on Swift, SwiftUI and iOS Development",
-                           keywords: ["Swift", "SwiftUI", "iOS Development"])
-//                socialMeta(title: "Learn iOS Development",
-//                           description: "Short articles and tutorials on Swift, SwiftUI and iOS Development",
-//                           image: ImageDescription.swiftUI.url,
-//                           url: "")
+                commonMeta(meta)
+                commonCSSLinks
                 commonCSS
-//                commonCSSLinks(root: .empty)
-//                indexCSSLinks
                 indexCSS
             }
             

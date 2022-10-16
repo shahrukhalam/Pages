@@ -1,5 +1,5 @@
 public struct ImageDescription {
-    let url: String
+    public let url: String
     let description: String
 
     public init(url: String, description: String) {

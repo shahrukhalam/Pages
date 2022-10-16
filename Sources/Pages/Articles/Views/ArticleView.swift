@@ -21,8 +21,7 @@ struct ArticleView: HTMLBodyContentView {
         Div {
             Div {
                 Markdown(article.markdown)
-                share(title: "Dynamic Library in iOS",
-                      url: "")
+                share(title: article.title, url: article.url)
             }
             .identifyBy(cssClass: .markdown)
         }
@@ -35,14 +34,14 @@ private func share(title: String, url: String) -> some HTMLBodyContentView {
         Div {
             Paragraphs("Thanks for reading 🚀" + .lineBreak + "If you liked this article, please share it with your friends and fellow iOS Developers 🙏")
             ImageLink(url: "https://twitter.com/intent/tweet?text=I recommend \(title) by Shahrukh Alam \(url)", content: {
-                Image("/images/articles/twitter.png", alternateText: "")
+                Image("/images/articles/twitter.png", alternateText: "twitter icon")
                 Paragraphs("Share this article on Twitter")
                     .display(.inline)
             })
             .display(.block)
             .target(.newWindowOrTab)
             ImageLink(url: "https://www.linkedin.com/sharing/share-offsite/?url=\(url)", content: {
-                Image("/images/articles/linkedin.png", alternateText: "")
+                Image("/images/articles/linkedin.png", alternateText: "linkedin icon")
                 Paragraphs("Share this article on Linkedin")
                     .display(.inline)
             })

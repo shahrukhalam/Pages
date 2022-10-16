@@ -9,8 +9,12 @@ import Foundation
 
 public struct Article {
     let markdown: String
+    let title: String
+    let url: String
     
-    public init(markdown: String) {
+    public init(markdown: String, title: String, url: String) {
         self.markdown = markdown
+        self.title = title
+        self.url = url
     }
 }
