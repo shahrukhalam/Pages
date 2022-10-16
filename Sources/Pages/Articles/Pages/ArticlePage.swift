@@ -7,14 +7,14 @@
 
 import HTMLDSL
 
-public func articlePage(article: Article, meta: MetaDetail) -> some View {
+public func articlePage(article: Article, meta: MetaDetail, listImage: String) -> some View {
     Document {
         HTML {
             Head {
                 commonMeta(meta)
                 commonCSSLinks
                 commonCSS
-                articlePageCSS
+                articlePageCSS(listImage: listImage)
                 AnalyticsScript()
             }
             

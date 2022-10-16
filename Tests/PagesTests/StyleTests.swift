@@ -78,7 +78,7 @@ class StyleTests: XCTestCase {
     }
     
     func testMarkdownStyle() {
-        let markdownStyle = MarkdownStyle(type: .wide)
+        let markdownStyle = MarkdownStyle(type: .wide, listImage: "/images/articles/spinning-top.tiff")
         
         let expectation =
             """

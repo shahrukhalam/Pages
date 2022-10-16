@@ -13,25 +13,25 @@ public struct MarkdownStyle: CSSStyle {
     
     public var element: String
     
-    public init(type: CSSLink.DeviceType) {
+    public init(type: CSSLink.DeviceType, listImage: String) {
         self.key = Tag.empty.description
         let containerStyle = ClassStyle(forClass: .markdown)
             .size(width: type == .wide ? .percentage(60) : .percentage(90))
             .margin(left: .auto, right: .auto)
-        let allStyles = Self.commonStyles + [containerStyle]
+        let allStyles = Self.commonStyles(listImage: listImage) + [containerStyle]
         self.element = allStyles.map { $0.element }.joined(separator: "\n")
     }
 
-    init(mediaType: MediaStyle.DeviceType) {
+    init(mediaType: MediaStyle.DeviceType, listImage: String) {
         self.key = Tag.empty.description
         let containerStyle = ClassStyle(forClass: .markdown)
             .size(width: mediaType == .wide ? .percentage(60) : .percentage(90))
             .margin(left: .auto, right: .auto)
-        let allStyles: [CSSStyle] = Self.commonStyles + [MediaStyle(for: mediaType, with: containerStyle)]
+        let allStyles: [CSSStyle] = Self.commonStyles(listImage: listImage) + [MediaStyle(for: mediaType, with: containerStyle)]
         self.element = allStyles.map { $0.element }.joined(separator: "\n")
     }
 
-    static var commonStyles: [ClassStyle] {
+    static func commonStyles(listImage: String) -> [ClassStyle] {
         let h1Style = ClassStyle(forClass: .markdown, withTag: .enclosing(.headings(.h1)))
             .padding(top: .pixel(20), bottom: .pixel(20))
             .font(size: .percentage(300))
@@ -59,7 +59,7 @@ public struct MarkdownStyle: CSSStyle {
             .padding(bottom: .pixel(5))
             .font(size: .percentage(125))
             .lineHeight(.percentage(160))
-            .listImage(url: "/Images/Articles/spinning-top.tiff")
+            .listImage(url: listImage)
         let blockquoteStyle = ClassStyle(forClass: .markdown, withTag: .enclosing(.blockquote))
             .margin(uniform: .pixel(20))
             .padding(left: .pixel(20))

@@ -7,10 +7,10 @@
 
 import HTMLDSL
 
-var articlePageCSS: some HTMLHeadContentView {
+func articlePageCSS(listImage: String) -> some HTMLHeadContentView {
     HeadStyle {
         ArticleStyle()
-        MarkdownStyle(mediaType: .small)
-        MarkdownStyle(mediaType: .wide)
+        MarkdownStyle(mediaType: .small, listImage: listImage)
+        MarkdownStyle(mediaType: .wide, listImage: listImage)
     }
 }
