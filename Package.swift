@@ -9,7 +9,8 @@ let package = Package(
         .library(name: "Pages", targets: ["Pages"])
     ],
     dependencies: [
-        .package(url: "https://github.com/shahrukhalam/HTMLDSL", branch: "main")
+        .package(path: "../HTMLDSL")
+//        .package(url: "https://github.com/shahrukhalam/HTMLDSL", branch: "main")
     ],
     targets: [
         .target(name: "Pages", dependencies: ["HTMLDSL"]),
