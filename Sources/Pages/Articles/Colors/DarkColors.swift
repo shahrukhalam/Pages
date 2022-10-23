@@ -27,4 +27,12 @@ public extension Color {
     static var DarkArticleBackground: Color {
         return .rgba(red: 20, green: 20, blue: 21, alpha: 1.0)
     }
+    
+    static var title404: Color {
+        return .rgba(red: 133, green: 133, blue: 133, alpha: 1.0)
+    }
+    
+    static var subtitle404: Color {
+        return .rgba(red: 110, green: 110, blue: 110, alpha: 1.0)
+    }
 }

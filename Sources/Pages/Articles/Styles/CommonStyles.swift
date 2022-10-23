@@ -10,11 +10,18 @@ import HTMLDSL
 private let centerTextStyle = ClassStyle(forClass: .centerText)
     .align(.center)
 
-private let centerDivXStyle = ClassStyle(forClass: .centerDivX)
-    .margin(left: .auto, right: .auto)
+private let centerDivContainerXStyle = ClassStyle(forClass: .centerDivContainerX)
+    .display(.flex)
+    .flexAlign(.center)
 
-private let centerDivYStyle = ClassStyle(forClass: .centerDivY)
-    .margin(top: .auto, bottom: .auto)
+private let centerDivContainerYStyle = ClassStyle(forClass: .centerDivContainerY)
+    .display(.flex)
+    .flexDistribute(.center)
+
+private let centerDivContainerStyle = ClassStyle(forClass: .centerDivContainer)
+    .display(.flex)
+    .flexDistribute(.center)
+    .flexAlign(.center)
 
 private let imageFullWidth = ClassStyle(forClass: .imageFullWidth)
     .margin(top: .pixel(20), bottom: .pixel(20))
@@ -40,8 +47,9 @@ public let mobileHiddenStyle = ClassStyle(forClass: .mobileHidden)
 
 public let commonStyles = [
     centerTextStyle,
-    centerDivXStyle,
-    centerDivYStyle,
+    centerDivContainerXStyle,
+    centerDivContainerYStyle,
+    centerDivContainerStyle,
     imageFullWidth,
     imageHalfWidth,
     linkStyle,
