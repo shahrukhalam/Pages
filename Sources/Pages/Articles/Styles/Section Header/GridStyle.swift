@@ -13,10 +13,10 @@ private let gridContainerOwnStyle = ClassStyle(forClass: .gridContainer)
     .gridColumn(gap: 12)
 private let gridContainerLinkStyle = ClassStyle(.gridItem, cssTag: .hover, tag: .enclosing(.link))
     .textDecoration(.underline)
-public let gridContainerStyle = [gridContainerOwnStyle, gridContainerLinkStyle]
+public let gridContainerStyle: [CSSStyle] = [gridContainerOwnStyle, gridContainerLinkStyle]
 
 private let gridContainerSmallOwnStyle = ClassStyle(forClass: .gridContainer)
     .display(.grid)
     .gridNumberOfColumnsWithWidth([.auto])
     .gridRow(gap: 12)
-public let gridContainerSmallStyle = [gridContainerSmallOwnStyle, gridContainerLinkStyle]
+public let gridContainerSmallStyle: [CSSStyle] = [gridContainerSmallOwnStyle, gridContainerLinkStyle]

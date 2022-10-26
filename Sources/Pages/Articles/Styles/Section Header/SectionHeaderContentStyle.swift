@@ -13,7 +13,7 @@ private let sectionHeaderContentOwnStyle = ClassStyle(forClass: .sectionHeaderCo
     .padding(top: .pixel(65), bottom: .pixel(75))
 private let sectionHeaderContentLinkStyle = ClassStyle(.sectionHeaderHero, cssTag: .hover, tag: .enclosing(.link))
     .textDecoration(.underline)
-public let sectionHeaderContentStyle = [
+public let sectionHeaderContentStyle: [CSSStyle] = [
     sectionHeaderContentOwnStyle,
     sectionHeaderContentLinkStyle
 ]
@@ -22,7 +22,7 @@ private let sectionHeaderContentSmallOwnStyle = ClassStyle(forClass: .sectionHea
     .boxSize(.borderBox)
     .size(width: .percentage(100))
     .padding(left: .pixel(20), top: .pixel(65), right: .pixel(20), bottom: .pixel(75))
-public let sectionHeaderContentSmallStyle = [
+public let sectionHeaderContentSmallStyle: [CSSStyle] = [
     sectionHeaderContentSmallOwnStyle,
     sectionHeaderContentLinkStyle
 ]

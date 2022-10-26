@@ -44,7 +44,7 @@ private let subheadlineStyle = ClassStyle(forClass: .subheadline)
     .font(weight: .number(400))
     .lineHeight(.percentage(140))
 
-public let fontStyles = [
+public let fontStyles: [CSSStyle] = [
     largeTitleStyle,
     title1Style,
     title2Style,
